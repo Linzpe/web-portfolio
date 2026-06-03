@@ -4,46 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linz · Estudio Web | Diseño de páginas web para negocios de Granada</title>
-    <meta name="description" content="Diseño y publico webs modernas para negocios locales de Granada: restaurantes, clínicas, comercios. Diseño a medida, hosting y mantenimiento. Mira mis trabajos.">
-    <meta property="og:title" content="Linz · Estudio Web — Webs para negocios locales">
-    <meta property="og:description" content="Páginas web modernas para negocios de Granada. Diseño a medida, rápidas y listas para conseguir clientes.">
+    <meta name="description" content="Estudio de diseño web en Granada. Creo, publico y mantengo páginas web modernas para negocios locales: clínicas, restaurantes, comercios. Mira mis proyectos.">
+    <meta property="og:title" content="Linz · Estudio Web — Diseño web para negocios">
+    <meta property="og:description" content="Páginas web modernas y a medida para negocios locales de Granada. Diseño, hosting y mantenimiento.">
     <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
         /* ============================================================
            TEMA MODIFICABLE  —  marca personal (Linz · Estudio Web)
-           (perfil: ESTUDIO DE DISEÑO -> oscuro moderno + degradado vivo)
+           (perfil: ESTUDIO DE DISEÑO -> claro, editorial, premium)
            ============================================================ */
         :root {
-            --brand:      #6D5EF6;   /* Violeta (acento principal) */
-            --brand-dark: #5847D6;   /* Violeta oscuro (hover) */
-            --accent:     #22D3EE;   /* Cian (acento secundario) */
-            --bg:         #0B0E1A;   /* Azul-negro profundo (fondo) */
-            --surface:    #12162A;   /* Superficie de tarjetas */
-            --surface-2:  #1A1F38;   /* Superficie alternativa */
-            --text:       #EAECF5;   /* Blanco frío (texto) */
-            --muted:      #9AA2C0;   /* Gris azulado (texto secundario) */
-            --font-head:  'Space Grotesk', sans-serif;  /* titulares */
-            --font-body:  'Inter', sans-serif;          /* cuerpo */
+            --ink:        #1A1916;   /* Tinta (texto y acentos) */
+            --accent:     #97704E;   /* Bronce sobrio (detalles) */
+            --bg:         #F8F6F1;   /* Blanco roto cálido (fondo) */
+            --surface:    #FFFFFF;   /* Superficie de tarjetas */
+            --surface-2:  #EFEBE3;   /* Arena (superficie alternativa) */
+            --muted:      #6E685E;   /* Gris cálido (texto secundario) */
+            --line:       rgba(26,25,22,.12);
+            --font-head:  'Manrope', sans-serif;  /* titulares */
+            --font-body:  'Inter', sans-serif;    /* cuerpo */
         }
         /* ============================================================ */
 
-        body { background-color: var(--bg); color: var(--text); font-family: var(--font-body); font-weight: 300; }
+        body { background-color: var(--bg); color: var(--ink); font-family: var(--font-body); font-weight: 300; }
         h1,h2,h3,.font-head { font-family: var(--font-head); }
+        .serif-it { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
         html { scroll-behavior: smooth; }
-        .kicker { letter-spacing: 0.25em; text-transform: uppercase; font-size: 0.72rem; font-weight: 600; }
-        .grad-text { background: linear-gradient(100deg, var(--brand), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .grad-bg { background: linear-gradient(120deg, var(--brand), var(--accent)); }
-        .lift { transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
-        .lift:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(109,94,246,.55); border-color: var(--brand); }
-        .glow { background: radial-gradient(circle at 50% 0%, rgba(109,94,246,.25), transparent 60%); }
-        .chrome-dot { height: 9px; width: 9px; border-radius: 9999px; }
+        .kicker { letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.7rem; font-weight: 600; }
+        .card { transition: transform .4s ease, box-shadow .4s ease; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -34px rgba(26,25,22,.45); }
+        .card:hover .arrow { transform: translateX(5px); }
+        .arrow { transition: transform .3s ease; }
+        .chrome-dot { height: 8px; width: 8px; border-radius: 9999px; }
+        .underline-grow { background-image: linear-gradient(var(--ink),var(--ink)); background-size: 0% 1px; background-repeat: no-repeat; background-position: left bottom; transition: background-size .35s ease; }
+        a:hover > .underline-grow, .underline-grow:hover { background-size: 100% 1px; }
     </style>
 </head>
 
@@ -53,108 +54,176 @@
 <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300" style="background: transparent;">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
         <div class="flex items-center justify-between h-20">
-            <a href="#inicio" class="font-head text-xl font-bold tracking-tight">Linz<span class="grad-text">.</span><span class="text-sm font-normal align-middle ml-1" style="color: var(--muted);">estudio web</span></a>
-            <nav class="hidden md:flex items-center gap-9 text-sm" style="color: var(--text);" aria-label="Navegación principal">
-                <a href="#trabajos" class="hover:text-[var(--accent)] transition-colors">Trabajos</a>
-                <a href="#servicios" class="hover:text-[var(--accent)] transition-colors">Servicios</a>
-                <a href="#proceso" class="hover:text-[var(--accent)] transition-colors">Cómo trabajo</a>
-                <a href="#contacto" class="hover:text-[var(--accent)] transition-colors">Contacto</a>
+            <a href="#inicio" class="font-head text-lg font-extrabold tracking-tight">Linz<span style="color: var(--accent);">.</span></a>
+            <nav class="hidden md:flex items-center gap-10 text-sm" style="color: var(--ink);" aria-label="Navegación principal">
+                <a href="#proyectos" class="hover:opacity-60 transition-opacity">Proyectos</a>
+                <a href="#servicios" class="hover:opacity-60 transition-opacity">Servicios</a>
+                <a href="#proceso" class="hover:opacity-60 transition-opacity">Proceso</a>
+                <a href="#contacto" class="hover:opacity-60 transition-opacity">Contacto</a>
             </nav>
-            <a href="#contacto" class="hidden md:inline-block grad-bg px-6 py-2.5 text-sm font-semibold text-white rounded-full">Hablar conmigo</a>
-            <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Abrir menú" style="color: var(--text);">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 7h16M4 12h16M4 17h16"/></svg>
-            </button>
+            <a href="#contacto" class="hidden md:inline-block px-6 py-2.5 text-xs kicker text-white rounded-full" style="background: var(--ink);">Trabajemos juntos</a>
+            <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Abrir menú"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
         </div>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden border-t" style="background: var(--bg); border-color: rgba(109,94,246,.25);">
+    <div id="mobile-menu" class="hidden md:hidden border-t" style="background: var(--bg); border-color: var(--line);">
         <div class="px-6 py-4 flex flex-col gap-3 text-sm">
-            <a href="#trabajos" class="py-1.5">Trabajos</a>
+            <a href="#proyectos" class="py-1.5">Proyectos</a>
             <a href="#servicios" class="py-1.5">Servicios</a>
-            <a href="#proceso" class="py-1.5">Cómo trabajo</a>
+            <a href="#proceso" class="py-1.5">Proceso</a>
             <a href="#contacto" class="py-1.5">Contacto</a>
-            <a href="#contacto" class="mt-2 grad-bg inline-block text-center px-6 py-2.5 text-sm font-semibold text-white rounded-full">Hablar conmigo</a>
+            <a href="#contacto" class="mt-2 inline-block text-center px-6 py-2.5 text-xs kicker text-white rounded-full" style="background: var(--ink);">Trabajemos juntos</a>
         </div>
     </div>
 </header>
 
 <!-- HERO -->
-<section id="inicio" class="relative pt-36 pb-24 lg:pt-44 lg:pb-32 overflow-hidden">
-    <div class="absolute inset-0 glow"></div>
-    <div class="max-w-6xl mx-auto px-5 sm:px-8 relative text-center">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold border" style="border-color: rgba(109,94,246,.4); color: var(--accent);">
-            ● Diseño web para negocios de Granada
-        </span>
-        <h1 class="mt-7 text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] max-w-4xl mx-auto">
-            Páginas web que hacen que tu negocio <span class="grad-text">parezca de otro nivel</span>
+<section id="inicio" class="pt-36 pb-20 lg:pt-44 lg:pb-24">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <p class="kicker" style="color: var(--accent);">Estudio de diseño web · Granada</p>
+        <h1 class="mt-7 font-head font-extrabold tracking-tight leading-[1.02] text-5xl sm:text-6xl lg:text-7xl max-w-4xl">
+            Webs que dan a tu negocio la imagen que <span class="serif-it" style="color: var(--accent);">merece</span>
         </h1>
-        <p class="mt-7 text-lg leading-relaxed max-w-2xl mx-auto" style="color: var(--muted);">
-            Diseño, publico y mantengo webs modernas y rápidas para restaurantes, clínicas y comercios. Tú te dedicas a tu negocio; de tu imagen en internet me encargo yo.
+        <p class="mt-8 text-lg leading-relaxed max-w-2xl" style="color: var(--muted);">
+            Diseño, publico y mantengo páginas web modernas para negocios locales. Cuidadas, rápidas y pensadas para que tus clientes te encuentren y confíen en ti.
         </p>
-        <div class="mt-10 flex flex-wrap gap-4 justify-center">
-            <a href="#trabajos" class="grad-bg px-8 py-3.5 text-sm font-semibold text-white rounded-full">Ver mis trabajos</a>
-            <a href="#contacto" class="px-8 py-3.5 text-sm font-semibold rounded-full border" style="border-color: rgba(234,236,245,.25); color: var(--text);">Pídeme presupuesto</a>
+        <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#proyectos" class="px-8 py-3.5 text-xs kicker text-white rounded-full" style="background: var(--ink);">Ver proyectos</a>
+            <a href="#contacto" class="px-8 py-3.5 text-xs kicker rounded-full border" style="border-color: var(--ink); color: var(--ink);">Pedir presupuesto</a>
+        </div>
+        <div class="mt-14 pt-8 border-t flex flex-wrap gap-x-14 gap-y-6" style="border-color: var(--line);">
+            <div>
+                <p class="font-head text-3xl font-extrabold">6</p>
+                <p class="text-sm mt-1" style="color: var(--muted);">Proyectos publicados</p>
+            </div>
+            <div>
+                <p class="font-head text-3xl font-extrabold">100%</p>
+                <p class="text-sm mt-1" style="color: var(--muted);">Diseño a medida</p>
+            </div>
+            <div>
+                <p class="font-head text-3xl font-extrabold">Granada</p>
+                <p class="text-sm mt-1" style="color: var(--muted);">Negocios locales</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- TRABAJOS -->
-<section id="trabajos" class="py-20 sm:py-24">
+<!-- PROYECTOS -->
+<section id="proyectos" class="py-16 sm:py-20">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="text-center max-w-2xl mx-auto">
-            <p class="kicker grad-text">Trabajos</p>
-            <h2 class="text-3xl sm:text-4xl mt-3 font-bold">Webs reales que he diseñado</h2>
-            <p class="mt-5 text-base" style="color: var(--muted);">Cada negocio, un estilo a su medida. Pincha en cualquiera para verla en vivo.</p>
+        <div class="flex items-end justify-between gap-6 mb-12">
+            <div>
+                <p class="kicker" style="color: var(--accent);">Proyectos</p>
+                <h2 class="mt-3 font-head font-extrabold text-3xl sm:text-4xl tracking-tight">Trabajos recientes</h2>
+            </div>
+            <p class="hidden sm:block max-w-xs text-sm text-right" style="color: var(--muted);">Cada negocio, un diseño único. Pincha para verlo en vivo.</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-7 mt-14">
+        <div class="grid md:grid-cols-2 gap-8">
             <!-- BIOC -->
-            <a href="https://linzpe.github.io/web-clinica-bioc/" target="_blank" rel="noopener" class="lift block rounded-2xl overflow-hidden border" style="background: var(--surface); border-color: var(--surface-2);">
-                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--surface-2);">
-                    <span class="chrome-dot" style="background:#ff5f57"></span><span class="chrome-dot" style="background:#febc2e"></span><span class="chrome-dot" style="background:#28c840"></span>
-                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">linzpe.github.io/web-clinica-bioc</span>
+            <a href="https://linzpe.github.io/web-clinica-bioc/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
+                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
+                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">clinicabioc · fisioterapia</span>
                 </div>
-                <div class="h-44 flex items-center justify-center" style="background: linear-gradient(135deg,#0A1526,#16294A);">
-                    <span class="font-head text-2xl font-bold" style="color:#4F93D1;">Clínica BIOC</span>
+                <div class="h-52 flex items-center justify-center" style="background: linear-gradient(135deg,#0A1526,#16294A);">
+                    <span class="font-head text-3xl font-bold" style="color:#4F93D1;">Clínica BIOC</span>
                 </div>
-                <div class="p-6">
-                    <span class="text-xs kicker" style="color: var(--accent);">Fisioterapia · Salud</span>
-                    <h3 class="text-lg font-semibold mt-2">Clínica BIOC</h3>
-                    <p class="mt-2 text-sm" style="color: var(--muted);">Estilo elegante y sobrio en azul marino, con sus fotos reales.</p>
-                    <span class="mt-4 inline-block text-sm font-semibold" style="color: var(--accent);">Ver web en vivo →</span>
+                <div class="p-6 flex items-center justify-between">
+                    <div>
+                        <p class="text-xs kicker" style="color: var(--accent);">Fisioterapia · Salud</p>
+                        <h3 class="font-head text-xl font-bold mt-1">Clínica BIOC</h3>
+                    </div>
+                    <span class="arrow text-xl">→</span>
                 </div>
             </a>
 
             <!-- Rincón de Julio -->
-            <a href="https://linzpe.github.io/web-el-rincon-de-julio/" target="_blank" rel="noopener" class="lift block rounded-2xl overflow-hidden border" style="background: var(--surface); border-color: var(--surface-2);">
-                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--surface-2);">
-                    <span class="chrome-dot" style="background:#ff5f57"></span><span class="chrome-dot" style="background:#febc2e"></span><span class="chrome-dot" style="background:#28c840"></span>
-                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">linzpe.github.io/web-el-rincon-de-julio</span>
+            <a href="https://linzpe.github.io/web-el-rincon-de-julio/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
+                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
+                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">el-rincon-de-julio · restaurante</span>
                 </div>
-                <div class="h-44 flex items-center justify-center" style="background: linear-gradient(135deg,#B23A2E,#5E6B3B);">
-                    <span class="font-head text-2xl font-bold text-white">El Rincón de Julio</span>
+                <div class="h-52 flex items-center justify-center" style="background: linear-gradient(135deg,#B23A2E,#5E6B3B);">
+                    <span class="font-head text-3xl font-bold text-white">El Rincón de Julio</span>
                 </div>
-                <div class="p-6">
-                    <span class="text-xs kicker" style="color: var(--accent);">Restaurante · Hostelería</span>
-                    <h3 class="text-lg font-semibold mt-2">El Rincón de Julio</h3>
-                    <p class="mt-2 text-sm" style="color: var(--muted);">Taberna andaluza cálida, con carta, fotos de platos y reservas.</p>
-                    <span class="mt-4 inline-block text-sm font-semibold" style="color: var(--accent);">Ver web en vivo →</span>
+                <div class="p-6 flex items-center justify-between">
+                    <div>
+                        <p class="text-xs kicker" style="color: var(--accent);">Restaurante · Hostelería</p>
+                        <h3 class="font-head text-xl font-bold mt-1">El Rincón de Julio</h3>
+                    </div>
+                    <span class="arrow text-xl">→</span>
+                </div>
+            </a>
+
+            <!-- Ssacha -->
+            <a href="https://linzpe.github.io/web-peluqueria-Mariana-Bayo/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
+                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
+                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">peluqueria-ssacha · belleza</span>
+                </div>
+                <div class="h-52 flex items-center justify-center" style="background: #100F0D;">
+                    <span class="font-head text-4xl" style="color:#C5A35B; font-family:'Fraunces',serif;">Ssacha</span>
+                </div>
+                <div class="p-6 flex items-center justify-between">
+                    <div>
+                        <p class="text-xs kicker" style="color: var(--accent);">Peluquería · Belleza</p>
+                        <h3 class="font-head text-xl font-bold mt-1">Peluquería Ssacha</h3>
+                    </div>
+                    <span class="arrow text-xl">→</span>
+                </div>
+            </a>
+
+            <!-- Carmen Solana -->
+            <a href="https://linzpe.github.io/web-clinica-dental-solana-perez/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
+                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
+                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">dental-solana-perez · dental</span>
+                </div>
+                <div class="h-52 flex items-center justify-center" style="background: #ECE3D8;">
+                    <span class="text-3xl" style="color:#8E5E45; font-family:'Fraunces',serif; font-style:italic;">Dra. Carmen Solana</span>
+                </div>
+                <div class="p-6 flex items-center justify-between">
+                    <div>
+                        <p class="text-xs kicker" style="color: var(--accent);">Clínica dental · Salud</p>
+                        <h3 class="font-head text-xl font-bold mt-1">Dental Solana Pérez</h3>
+                    </div>
+                    <span class="arrow text-xl">→</span>
                 </div>
             </a>
 
             <!-- Dental Zaidín -->
-            <a href="https://linzpe.github.io/web-clinica-dental-zaidin/" target="_blank" rel="noopener" class="lift block rounded-2xl overflow-hidden border" style="background: var(--surface); border-color: var(--surface-2);">
-                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--surface-2);">
-                    <span class="chrome-dot" style="background:#ff5f57"></span><span class="chrome-dot" style="background:#febc2e"></span><span class="chrome-dot" style="background:#28c840"></span>
-                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">linzpe.github.io/web-clinica-dental-zaidin</span>
+            <a href="https://linzpe.github.io/web-clinica-dental-zaidin/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
+                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
+                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">dental-zaidin · dental</span>
                 </div>
-                <div class="h-44 flex items-center justify-center" style="background: linear-gradient(135deg,#66B22E,#2E9BD6);">
-                    <span class="font-head text-2xl font-bold text-white">Dental Zaidín</span>
+                <div class="h-52 flex items-center justify-center" style="background: linear-gradient(135deg,#66B22E,#2E9BD6);">
+                    <span class="font-head text-3xl font-bold text-white">Dental Zaidín</span>
                 </div>
-                <div class="p-6">
-                    <span class="text-xs kicker" style="color: var(--accent);">Clínica dental · Salud</span>
-                    <h3 class="text-lg font-semibold mt-2">Clínica Dental Zaidín</h3>
-                    <p class="mt-2 text-sm" style="color: var(--muted);">Look limpio y cercano en verde, con hero partido e iconos.</p>
-                    <span class="mt-4 inline-block text-sm font-semibold" style="color: var(--accent);">Ver web en vivo →</span>
+                <div class="p-6 flex items-center justify-between">
+                    <div>
+                        <p class="text-xs kicker" style="color: var(--accent);">Clínica dental · Salud</p>
+                        <h3 class="font-head text-xl font-bold mt-1">Clínica Dental Zaidín</h3>
+                    </div>
+                    <span class="arrow text-xl">→</span>
+                </div>
+            </a>
+
+            <!-- Iván Romera -->
+            <a href="https://linzpe.github.io/web-clinica-ivan-romera/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
+                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
+                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">ivan-romera · podología</span>
+                </div>
+                <div class="h-52 flex items-center justify-center" style="background: linear-gradient(135deg,#14B5C0,#0E8C95);">
+                    <span class="font-head text-3xl font-bold text-white">Iván Romera</span>
+                </div>
+                <div class="p-6 flex items-center justify-between">
+                    <div>
+                        <p class="text-xs kicker" style="color: var(--accent);">Podología · Salud</p>
+                        <h3 class="font-head text-xl font-bold mt-1">Podólogo Iván Romera</h3>
+                    </div>
+                    <span class="arrow text-xl">→</span>
                 </div>
             </a>
         </div>
@@ -162,94 +231,86 @@
 </section>
 
 <!-- SERVICIOS -->
-<section id="servicios" class="py-20 sm:py-24" style="background: var(--surface);">
+<section id="servicios" class="py-20 sm:py-28 mt-8" style="background: var(--ink); color: var(--bg);">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="text-center max-w-2xl mx-auto">
-            <p class="kicker grad-text">Servicios</p>
-            <h2 class="text-3xl sm:text-4xl mt-3 font-bold">Todo resuelto, sin complicarte</h2>
+        <div class="max-w-2xl">
+            <p class="kicker" style="color: #C9A98A;">Servicios</p>
+            <h2 class="mt-4 font-head font-extrabold text-3xl sm:text-4xl tracking-tight">Me ocupo de todo, de principio a fin</h2>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
-            <div class="rounded-2xl p-6 border" style="background: var(--bg); border-color: var(--surface-2);">
-                <div class="grad-bg h-11 w-11 rounded-xl flex items-center justify-center mb-4">
-                    <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.12 4.5 21l-1.5-1.5 4.88-5.03m1.65 1.65 6.36-6.36m-8.01 4.71L13.5 4.5a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-9.06 9.06"/></svg>
-                </div>
-                <h3 class="font-semibold">Diseño a medida</h3>
-                <p class="mt-2 text-sm" style="color: var(--muted);">Cada web con el estilo, colores y tono de tu negocio. Nada de plantillas genéricas.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px mt-14" style="background: rgba(248,246,241,.14);">
+            <div class="p-8" style="background: var(--ink);">
+                <p class="font-head text-sm font-bold" style="color:#C9A98A;">01</p>
+                <h3 class="font-head text-xl font-bold mt-3">Diseño a medida</h3>
+                <p class="mt-3 text-sm leading-relaxed opacity-70">Una web con la identidad de tu negocio. Sin plantillas genéricas.</p>
             </div>
-            <div class="rounded-2xl p-6 border" style="background: var(--bg); border-color: var(--surface-2);">
-                <div class="grad-bg h-11 w-11 rounded-xl flex items-center justify-center mb-4">
-                    <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12c0-5.38 4.37-9.75 9.75-9.75S21.75 6.62 21.75 12 17.38 21.75 12 21.75 2.25 17.38 2.25 12Zm0 0h19.5M12 2.25c2.5 2.7 3.9 6.1 3.9 9.75s-1.4 7.05-3.9 9.75c-2.5-2.7-3.9-6.1-3.9-9.75S9.5 4.95 12 2.25Z"/></svg>
-                </div>
-                <h3 class="font-semibold">Hosting incluido</h3>
-                <p class="mt-2 text-sm" style="color: var(--muted);">Tu web online, rápida y con certificado de seguridad (HTTPS). Sin que tengas que tocar nada.</p>
+            <div class="p-8" style="background: var(--ink);">
+                <p class="font-head text-sm font-bold" style="color:#C9A98A;">02</p>
+                <h3 class="font-head text-xl font-bold mt-3">Hosting y dominio</h3>
+                <p class="mt-3 text-sm leading-relaxed opacity-70">Tu web online, segura y rápida, con tu propio dominio si lo deseas.</p>
             </div>
-            <div class="rounded-2xl p-6 border" style="background: var(--bg); border-color: var(--surface-2);">
-                <div class="grad-bg h-11 w-11 rounded-xl flex items-center justify-center mb-4">
-                    <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.65 2.65 0 0 0 21 17.25l-5.88-5.88m-3.7 3.8-4.65 5.65a2.55 2.55 0 1 1-3.59-3.59l6.84-5.63"/></svg>
-                </div>
-                <h3 class="font-semibold">Mantenimiento</h3>
-                <p class="mt-2 text-sm" style="color: var(--muted);">¿Cambió el horario, la carta o un teléfono? Me lo dices y lo actualizo por ti.</p>
+            <div class="p-8" style="background: var(--ink);">
+                <p class="font-head text-sm font-bold" style="color:#C9A98A;">03</p>
+                <h3 class="font-head text-xl font-bold mt-3">Mantenimiento</h3>
+                <p class="mt-3 text-sm leading-relaxed opacity-70">¿Cambió un horario, un precio o una foto? Me lo dices y lo actualizo.</p>
             </div>
-            <div class="rounded-2xl p-6 border" style="background: var(--bg); border-color: var(--surface-2);">
-                <div class="grad-bg h-11 w-11 rounded-xl flex items-center justify-center mb-4">
-                    <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="m15 10.5 3.75 3.75M21 21l-5.2-5.2M4.5 10.5a6 6 0 1 1 12 0 6 6 0 0 1-12 0Z"/></svg>
-                </div>
-                <h3 class="font-semibold">SEO local</h3>
-                <p class="mt-2 text-sm" style="color: var(--muted);">Preparada para que te encuentren en Google cuando buscan tu tipo de negocio en tu zona.</p>
+            <div class="p-8" style="background: var(--ink);">
+                <p class="font-head text-sm font-bold" style="color:#C9A98A;">04</p>
+                <h3 class="font-head text-xl font-bold mt-3">SEO local</h3>
+                <p class="mt-3 text-sm leading-relaxed opacity-70">Optimizada para que te encuentren en Google en tu zona.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- PROCESO -->
-<section id="proceso" class="py-20 sm:py-24">
+<section id="proceso" class="py-20 sm:py-28">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="text-center max-w-2xl mx-auto">
-            <p class="kicker grad-text">Cómo trabajo</p>
-            <h2 class="text-3xl sm:text-4xl mt-3 font-bold">Fácil para ti, en 3 pasos</h2>
+        <div class="max-w-2xl">
+            <p class="kicker" style="color: var(--accent);">Proceso</p>
+            <h2 class="mt-4 font-head font-extrabold text-3xl sm:text-4xl tracking-tight">Sencillo para ti, en tres pasos</h2>
         </div>
-        <div class="grid md:grid-cols-3 gap-7 mt-14">
-            <div class="rounded-2xl p-7 border" style="background: var(--surface); border-color: var(--surface-2);">
-                <span class="font-head text-4xl font-bold grad-text">01</span>
-                <h3 class="text-lg font-semibold mt-3">Hablamos</h3>
-                <p class="mt-2 text-sm" style="color: var(--muted);">Me cuentas tu negocio y me pasas fotos y datos. Sin tecnicismos.</p>
+        <div class="grid md:grid-cols-3 gap-10 mt-14">
+            <div class="border-t pt-6" style="border-color: var(--ink);">
+                <p class="font-head text-sm font-bold" style="color: var(--accent);">01</p>
+                <h3 class="font-head text-2xl font-bold mt-3">Hablamos</h3>
+                <p class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">Me cuentas tu negocio y me pasas fotos y datos. Sin tecnicismos ni complicaciones.</p>
             </div>
-            <div class="rounded-2xl p-7 border" style="background: var(--surface); border-color: var(--surface-2);">
-                <span class="font-head text-4xl font-bold grad-text">02</span>
-                <h3 class="text-lg font-semibold mt-3">Diseño tu web</h3>
-                <p class="mt-2 text-sm" style="color: var(--muted);">Te enseño una primera versión y la ajustamos hasta que te encante.</p>
+            <div class="border-t pt-6" style="border-color: var(--ink);">
+                <p class="font-head text-sm font-bold" style="color: var(--accent);">02</p>
+                <h3 class="font-head text-2xl font-bold mt-3">Diseño tu web</h3>
+                <p class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">Te enseño una primera versión y la pulimos juntos hasta que sea exactamente lo que quieres.</p>
             </div>
-            <div class="rounded-2xl p-7 border" style="background: var(--surface); border-color: var(--surface-2);">
-                <span class="font-head text-4xl font-bold grad-text">03</span>
-                <h3 class="text-lg font-semibold mt-3">La publico</h3>
-                <p class="mt-2 text-sm" style="color: var(--muted);">La pongo online y me ocupo del mantenimiento. Tú solo recibes clientes.</p>
+            <div class="border-t pt-6" style="border-color: var(--ink);">
+                <p class="font-head text-sm font-bold" style="color: var(--accent);">03</p>
+                <h3 class="font-head text-2xl font-bold mt-3">La publico</h3>
+                <p class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">La pongo online y me encargo del mantenimiento. Tú solo te dedicas a tu negocio.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="py-20 sm:py-24" style="background: var(--surface);">
+<section id="contacto" class="py-20 sm:py-28" style="background: var(--surface-2);">
     <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
-        <p class="kicker grad-text">Contacto</p>
-        <h2 class="text-3xl sm:text-5xl mt-3 font-bold">¿Hablamos de tu web?</h2>
-        <p class="mt-5 text-base" style="color: var(--muted);">Cuéntame tu negocio y te preparo una propuesta sin compromiso. Normalmente la tienes en pocos días.</p>
-        <div class="mt-9 flex flex-wrap gap-4 justify-center">
-            <a href="mailto:TU_EMAIL@ejemplo.com" class="grad-bg px-8 py-4 text-sm font-semibold text-white rounded-full">Escríbeme un email</a>
-            <a href="https://wa.me/34000000000" target="_blank" rel="noopener" class="px-8 py-4 text-sm font-semibold rounded-full border" style="border-color: rgba(234,236,245,.25); color: var(--text);">WhatsApp</a>
+        <p class="kicker" style="color: var(--accent);">Contacto</p>
+        <h2 class="mt-4 font-head font-extrabold text-4xl sm:text-5xl tracking-tight leading-tight">¿Damos vida a la web<br>de tu negocio?</h2>
+        <p class="mt-6 text-base" style="color: var(--muted);">Cuéntame qué necesitas y te preparo una propuesta sin compromiso.</p>
+        <div class="mt-10 flex flex-wrap gap-4 justify-center">
+            <a href="mailto:TU_EMAIL@ejemplo.com" class="px-9 py-4 text-xs kicker text-white rounded-full" style="background: var(--ink);">Escríbeme</a>
+            <a href="https://wa.me/34000000000" target="_blank" rel="noopener" class="px-9 py-4 text-xs kicker rounded-full border" style="border-color: var(--ink); color: var(--ink);">WhatsApp</a>
         </div>
         <p class="mt-6 text-xs" style="color: var(--muted);">(Sustituye el email y el WhatsApp por los tuyos reales.)</p>
     </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="mt-auto py-10 border-t" style="border-color: var(--surface-2);">
+<footer class="mt-auto py-10 border-t" style="border-color: var(--line);">
     <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-5">
-        <p class="font-head text-lg font-bold">Linz<span class="grad-text">.</span> <span class="text-sm font-normal" style="color: var(--muted);">estudio web · Granada</span></p>
+        <p class="font-head text-base font-extrabold">Linz<span style="color: var(--accent);">.</span> <span class="font-normal text-sm" style="color: var(--muted);">Estudio Web · Granada</span></p>
         <div class="flex items-center gap-7 text-sm" style="color: var(--muted);">
-            <a href="#trabajos" class="hover:text-[var(--text)]">Trabajos</a>
-            <a href="#servicios" class="hover:text-[var(--text)]">Servicios</a>
-            <a href="#contacto" class="hover:text-[var(--text)]">Contacto</a>
+            <a href="#proyectos" class="hover:text-[var(--ink)]">Proyectos</a>
+            <a href="#servicios" class="hover:text-[var(--ink)]">Servicios</a>
+            <a href="#contacto" class="hover:text-[var(--ink)]">Contacto</a>
         </div>
         <p class="text-xs" style="color: var(--muted);">© <span id="year"></span> Linz · Estudio Web</p>
     </div>
@@ -264,9 +325,9 @@
     const nav = document.getElementById('nav');
     function onScroll() {
         if (window.scrollY > 30) {
-            nav.style.background = 'rgba(11,14,26,.9)';
+            nav.style.background = 'rgba(248,246,241,.9)';
             nav.style.backdropFilter = 'blur(8px)';
-            nav.style.boxShadow = '0 8px 24px -16px rgba(0,0,0,.6)';
+            nav.style.boxShadow = '0 8px 24px -18px rgba(26,25,22,.4)';
         } else {
             nav.style.background = 'transparent';
             nav.style.backdropFilter = 'none';
