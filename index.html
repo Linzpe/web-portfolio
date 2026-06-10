@@ -42,7 +42,9 @@
         .card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -34px rgba(26,25,22,.45); }
         .card:hover .arrow { transform: translateX(5px); }
         .arrow { transition: transform .3s ease; }
-        .chrome-dot { height: 8px; width: 8px; border-radius: 9999px; }
+        .card-preview { height: 11rem; display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
+        .card-display { font-family: 'Fraunces', serif; font-style: italic; text-align: center; line-height: 1.15; }
+        .card-display.sans { font-family: var(--font-head); font-style: normal; font-weight: 700; }
         .underline-grow { background-image: linear-gradient(var(--ink),var(--ink)); background-size: 0% 1px; background-repeat: no-repeat; background-position: left bottom; transition: background-size .35s ease; }
         a:hover > .underline-grow, .underline-grow:hover { background-size: 100% 1px; }
     </style>
@@ -56,10 +58,10 @@
         <div class="flex items-center justify-between h-20">
             <a href="#inicio" class="font-head text-lg font-extrabold tracking-tight">Linz<span style="color: var(--accent);">.</span></a>
             <nav class="hidden md:flex items-center gap-10 text-sm" style="color: var(--ink);" aria-label="Navegación principal">
-                <a href="#proyectos" class="hover:opacity-60 transition-opacity">Proyectos</a>
+                <a href="#planes" class="hover:opacity-60 transition-opacity">Planes</a>
+                <a href="#ejemplos" class="hover:opacity-60 transition-opacity">Ejemplos</a>
                 <a href="#servicios" class="hover:opacity-60 transition-opacity">Servicios</a>
                 <a href="#proceso" class="hover:opacity-60 transition-opacity">Proceso</a>
-                <a href="#planes" class="hover:opacity-60 transition-opacity">Planes</a>
                 <a href="#contacto" class="hover:opacity-60 transition-opacity">Contacto</a>
             </nav>
             <a href="#contacto" class="hidden md:inline-block px-6 py-2.5 text-xs kicker text-white rounded-full" style="background: var(--ink);">Trabajemos juntos</a>
@@ -68,10 +70,10 @@
     </div>
     <div id="mobile-menu" class="hidden md:hidden border-t" style="background: var(--bg); border-color: var(--line);">
         <div class="px-6 py-4 flex flex-col gap-3 text-sm">
-            <a href="#proyectos" class="py-1.5">Proyectos</a>
+            <a href="#planes" class="py-1.5">Planes</a>
+            <a href="#ejemplos" class="py-1.5">Ejemplos</a>
             <a href="#servicios" class="py-1.5">Servicios</a>
             <a href="#proceso" class="py-1.5">Proceso</a>
-            <a href="#planes" class="py-1.5">Planes</a>
             <a href="#contacto" class="py-1.5">Contacto</a>
             <a href="#contacto" class="mt-2 inline-block text-center px-6 py-2.5 text-xs kicker text-white rounded-full" style="background: var(--ink);">Trabajemos juntos</a>
         </div>
@@ -89,12 +91,12 @@
             Diseño, publico y mantengo páginas web modernas para negocios locales. Cuidadas, rápidas y pensadas para que tus clientes te encuentren y confíen en ti.
         </p>
         <div class="mt-10 flex flex-wrap gap-4">
-            <a href="#proyectos" class="px-8 py-3.5 text-xs kicker text-white rounded-full" style="background: var(--ink);">Ver proyectos</a>
+            <a href="#planes" class="px-8 py-3.5 text-xs kicker text-white rounded-full" style="background: var(--ink);">Ver planes y ejemplos</a>
             <a href="#contacto" class="px-8 py-3.5 text-xs kicker rounded-full border" style="border-color: var(--ink); color: var(--ink);">Pedir presupuesto</a>
         </div>
         <div class="mt-14 pt-8 border-t flex flex-wrap gap-x-14 gap-y-6" style="border-color: var(--line);">
             <div>
-                <p class="font-head text-3xl font-extrabold">8</p>
+                <p class="font-head text-3xl font-extrabold">10</p>
                 <p class="text-sm mt-1" style="color: var(--muted);">Proyectos publicados</p>
             </div>
             <div>
@@ -109,167 +111,154 @@
     </div>
 </section>
 
-<!-- PROYECTOS -->
-<section id="proyectos" class="py-16 sm:py-20">
+<!-- PLANES -->
+<section id="planes" class="py-20 sm:py-28" style="background: var(--surface-2);">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="flex items-end justify-between gap-6 mb-12">
-            <div>
-                <p class="kicker" style="color: var(--accent);">Proyectos</p>
-                <h2 class="mt-3 font-head font-extrabold text-3xl sm:text-4xl tracking-tight">Trabajos recientes</h2>
-            </div>
-            <p class="hidden sm:block max-w-xs text-sm text-right" style="color: var(--muted);">Cada negocio, un diseño único. Pincha para verlo en vivo.</p>
+        <div class="max-w-2xl">
+            <p class="kicker" style="color: var(--accent);">Planes</p>
+            <h2 class="mt-4 font-head font-extrabold text-3xl sm:text-4xl tracking-tight">Precios claros, sin sorpresas</h2>
+            <p class="mt-5 text-base leading-relaxed" style="color: var(--muted);">Un pago único por tu web y una cuota mensual de mantenimiento. El precio depende de la cantidad de secciones, fotografías e información que necesites.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <!-- Rincón de Julio -->
-            <a href="https://linzpe.github.io/web-el-rincon-de-julio/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
-                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
-                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
-                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">el-rincon-de-julio · restaurante</span>
+        <div class="grid md:grid-cols-3 gap-6 mt-14 items-stretch">
+            <div class="rounded-2xl p-8 flex flex-col" style="background: var(--surface); border: 1px solid var(--line);">
+                <p class="kicker text-xs" style="color: var(--accent);">Económico</p>
+                <div class="mt-4 flex items-end gap-2">
+                    <span class="font-head text-5xl font-extrabold">150€</span>
+                    <span class="text-sm mb-1.5" style="color: var(--muted);">la web</span>
                 </div>
-                <div class="h-52 flex items-center justify-center" style="background: linear-gradient(135deg,#B23A2E,#5E6B3B);">
-                    <span class="font-head text-3xl font-bold text-white">El Rincón de Julio</span>
+                <p class="mt-2 text-sm" style="color: var(--muted);">+ 30€/mes de mantenimiento</p>
+                <ul class="mt-7 space-y-3 text-sm flex-1">
+                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Web de 1 página a medida</li>
+                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Adaptada a móvil y tablet</li>
+                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Tus fotos optimizadas</li>
+                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Botón de WhatsApp o teléfono</li>
+                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Alojamiento incluido</li>
+                </ul>
+                <a href="https://wa.me/34645333722?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Plan%20Econ%C3%B3mico%20(web%20150%E2%82%AC%20%2B%2030%E2%82%AC%2Fmes)" target="_blank" rel="noopener"
+                   class="mt-8 text-center px-6 py-3.5 text-xs kicker text-white rounded-full transition-opacity hover:opacity-90" style="background: var(--ink);">Lo quiero · Hablamos</a>
+            </div>
+            <div class="rounded-2xl p-8 flex flex-col relative md:-mt-4 md:mb-0 shadow-xl" style="background: var(--ink); color:#fff;">
+                <span class="absolute top-5 right-5 text-[10px] kicker px-3 py-1 rounded-full" style="background:#C9A57E; color: var(--ink);">Más popular</span>
+                <p class="kicker text-xs" style="color:#C9A57E;">Medium</p>
+                <div class="mt-4 flex items-end gap-2">
+                    <span class="font-head text-5xl font-extrabold">250€</span>
+                    <span class="text-sm mb-1.5" style="color: rgba(255,255,255,.6);">la web</span>
                 </div>
-                <div class="p-6 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs kicker" style="color: var(--accent);">Restaurante · Hostelería</p>
-                        <h3 class="font-head text-xl font-bold mt-1">El Rincón de Julio</h3>
-                    </div>
-                    <span class="arrow text-xl">→</span>
+                <p class="mt-2 text-sm" style="color: rgba(255,255,255,.6);">+ 40€/mes de mantenimiento</p>
+                <ul class="mt-7 space-y-3 text-sm flex-1">
+                    <li class="flex gap-3"><span style="color:#C9A57E;">✓</span>Todo lo del plan Económico</li>
+                    <li class="flex gap-3"><span style="color:#C9A57E;">✓</span>Varias secciones y galería de fotos</li>
+                    <li class="flex gap-3"><span style="color:#C9A57E;">✓</span>Google Maps integrado</li>
+                    <li class="flex gap-3"><span style="color:#C9A57E;">✓</span>SEO básico para que te encuentren</li>
+                    <li class="flex gap-3"><span style="color:#C9A57E;">✓</span>Cambios pequeños cada mes</li>
+                </ul>
+                <a href="https://wa.me/34645333722?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Plan%20Medium%20(web%20250%E2%82%AC%20%2B%2040%E2%82%AC%2Fmes)" target="_blank" rel="noopener"
+                   class="mt-8 text-center px-6 py-3.5 text-xs kicker rounded-full transition-opacity hover:opacity-90" style="background:#fff; color: var(--ink);">Lo quiero · Hablamos</a>
+            </div>
+            <div class="rounded-2xl p-8 flex flex-col" style="background: var(--surface); border: 1px solid var(--line);">
+                <p class="kicker text-xs" style="color: var(--accent);">Profesional</p>
+                <div class="mt-4 flex items-end gap-2">
+                    <span class="font-head text-5xl font-extrabold">400€</span>
+                    <span class="text-sm mb-1.5" style="color: var(--muted);">la web</span>
                 </div>
-            </a>
+                <p class="mt-2 text-sm" style="color: var(--muted);">+ 50€/mes de mantenimiento</p>
+                <ul class="mt-7 space-y-3 text-sm flex-1">
+                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Todo lo del plan Medium</li>
+                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Diseño premium a medida</li>
+                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Más páginas y secciones</li>
+                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>SEO avanzado</li>
+                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Cambios con prioridad</li>
+                </ul>
+                <a href="https://wa.me/34645333722?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Plan%20Profesional%20(web%20400%E2%82%AC%20%2B%2050%E2%82%AC%2Fmes)" target="_blank" rel="noopener"
+                   class="mt-8 text-center px-6 py-3.5 text-xs kicker text-white rounded-full transition-opacity hover:opacity-90" style="background: var(--ink);">Lo quiero · Hablamos</a>
+            </div>
+        </div>
+        <p class="mt-8 text-xs" style="color: var(--muted);">Precios orientativos (IVA no incluido). El mantenimiento es mensual y puedes darte de baja cuando quieras.</p>
 
-            <!-- Ssacha -->
-            <a href="https://linzpe.github.io/web-peluqueria-Mariana-Bayo/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
-                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
-                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
-                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">peluqueria-ssacha · belleza</span>
-                </div>
-                <div class="h-52 flex items-center justify-center" style="background: #100F0D;">
-                    <span class="font-head text-4xl" style="color:#C5A35B; font-family:'Fraunces',serif;">Ssacha</span>
-                </div>
-                <div class="p-6 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs kicker" style="color: var(--accent);">Peluquería · Belleza</p>
-                        <h3 class="font-head text-xl font-bold mt-1">Peluquería Ssacha</h3>
-                    </div>
-                    <span class="arrow text-xl">→</span>
-                </div>
-            </a>
+        <!-- EJEMPLOS POR PLAN -->
+        <div id="ejemplos" class="mt-20 pt-16 border-t" style="border-color: var(--line);">
+            <div class="max-w-3xl">
+                <p class="kicker" style="color: var(--accent);">Ejemplos reales</p>
+                <h3 class="mt-4 font-head font-extrabold text-2xl sm:text-3xl tracking-tight">Algunos clientes que han contratado distintos planes</h3>
+                <p class="mt-4 text-base leading-relaxed" style="color: var(--muted);">Así puedes ver la diferencia entre una web sencilla y una más elaborada. Pincha en cualquiera para verla en vivo.</p>
+            </div>
 
-            <!-- Carmen Solana -->
-            <a href="https://linzpe.github.io/web-clinica-dental-solana-perez/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
-                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
-                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
-                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">dental-solana-perez · dental</span>
+            <!-- Plan Económico -->
+            <div class="mt-12">
+                <div class="flex items-baseline gap-4 mb-6">
+                    <h4 class="font-head text-xl font-bold">Plan Económico</h4>
+                    <span class="text-sm" style="color: var(--muted);">150€ · web sencilla, 1 página</span>
                 </div>
-                <div class="h-52 flex items-center justify-center" style="background: #ECE3D8;">
-                    <span class="text-3xl" style="color:#8E5E45; font-family:'Fraunces',serif; font-style:italic;">Dra. Carmen Solana</span>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="https://linzpe.github.io/web-clinica-ivan-romera/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#D8F0F1;"><span class="card-display text-2xl sm:text-3xl" style="color:#0E8C95;">Iván Romera</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Podología · Salud</p><h5 class="font-head text-base font-bold mt-1">Podólogo Iván Romera</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
+                    <a href="https://linzpe.github.io/web-clinica-dental-zaidin/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#E3F0D8;"><span class="card-display text-2xl sm:text-3xl" style="color:#3A7A2E;">Dental Zaidín</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Clínica dental · Salud</p><h5 class="font-head text-base font-bold mt-1">Clínica Dental Zaidín</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
+                    <a href="https://linzpe.github.io/web-fisioten7/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#DEF1ED;"><span class="card-display text-2xl sm:text-3xl" style="color:#2A9A8E;">FisioTen7</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Fisioterapia · Salud</p><h5 class="font-head text-base font-bold mt-1">FisioTen7</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
+                    <a href="https://linzpe.github.io/web-podologo-olga-cardona/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#DCEAF2;"><span class="card-display text-2xl sm:text-3xl" style="color:#3B6E8C;">Olga Cardona</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Podología · Salud</p><h5 class="font-head text-base font-bold mt-1">Centre Podològic Olga Cardona</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
                 </div>
-                <div class="p-6 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs kicker" style="color: var(--accent);">Clínica dental · Salud</p>
-                        <h3 class="font-head text-xl font-bold mt-1">Dental Solana Pérez</h3>
-                    </div>
-                    <span class="arrow text-xl">→</span>
-                </div>
-            </a>
+            </div>
 
-            <!-- Dental Zaidín -->
-            <a href="https://linzpe.github.io/web-clinica-dental-zaidin/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
-                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
-                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
-                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">dental-zaidin · dental</span>
+            <!-- Plan Medium -->
+            <div class="mt-14">
+                <div class="flex items-baseline gap-4 mb-6">
+                    <h4 class="font-head text-xl font-bold">Plan Medium</h4>
+                    <span class="text-sm" style="color: var(--muted);">250€ · más secciones y fotos</span>
                 </div>
-                <div class="h-52 flex items-center justify-center" style="background: linear-gradient(135deg,#66B22E,#2E9BD6);">
-                    <span class="font-head text-3xl font-bold text-white">Dental Zaidín</span>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="https://linzpe.github.io/web-el-rincon-de-julio/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#F0DDD4;"><span class="card-display text-2xl sm:text-3xl" style="color:#8B3A2E;">El Rincón de Julio</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Restaurante · Hostelería</p><h5 class="font-head text-base font-bold mt-1">El Rincón de Julio</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
+                    <a href="https://linzpe.github.io/web-peluqueria-Mariana-Bayo/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#1A1815;"><span class="card-display sans text-3xl sm:text-4xl" style="color:#C5A35B;">Ssacha</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Peluquería · Belleza</p><h5 class="font-head text-base font-bold mt-1">Peluquería Ssacha</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
+                    <a href="https://linzpe.github.io/web-clinica-dental-solana-perez/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#ECE3D8;"><span class="card-display text-2xl sm:text-3xl" style="color:#8E5E45;">Dra. Carmen Solana</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Clínica dental · Salud</p><h5 class="font-head text-base font-bold mt-1">Dental Solana Pérez</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
+                    <a href="https://linzpe.github.io/web-marina-osteopatia-fisioterapia/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#D5EBE8;"><span class="card-display text-2xl sm:text-3xl" style="color:#246B63;">Marina Osteopatia</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Fisioterapia · Osteopatía</p><h5 class="font-head text-base font-bold mt-1">Marina Osteopatia i Fisioteràpia</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
                 </div>
-                <div class="p-6 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs kicker" style="color: var(--accent);">Clínica dental · Salud</p>
-                        <h3 class="font-head text-xl font-bold mt-1">Clínica Dental Zaidín</h3>
-                    </div>
-                    <span class="arrow text-xl">→</span>
-                </div>
-            </a>
+            </div>
 
-            <!-- Iván Romera -->
-            <a href="https://linzpe.github.io/web-clinica-ivan-romera/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
-                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
-                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
-                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">ivan-romera · podología</span>
+            <!-- Plan Profesional -->
+            <div class="mt-14">
+                <div class="flex items-baseline gap-4 mb-6">
+                    <h4 class="font-head text-xl font-bold">Plan Profesional</h4>
+                    <span class="text-sm" style="color: var(--muted);">400€ · diseño premium</span>
                 </div>
-                <div class="h-52 flex items-center justify-center" style="background: linear-gradient(135deg,#14B5C0,#0E8C95);">
-                    <span class="font-head text-3xl font-bold text-white">Iván Romera</span>
+                <div class="grid sm:grid-cols-2 gap-6 max-w-2xl">
+                    <a href="https://linzpe.github.io/web-clinica-dra-isabel-fernandez/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#1A1A1C;"><span class="card-display text-xl sm:text-2xl" style="color:#C4A05A;">Dra. Isabel Fernández</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Medicina estética · Salud</p><h5 class="font-head text-base font-bold mt-1">Clínica Dra. Isabel Fernández</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
+                    <a href="https://linzpe.github.io/web-sasa-perfumerias/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#110D14;"><span class="card-display sans text-3xl sm:text-4xl" style="color:#F2EBE2;">SA<span style="color:#CBA468;">&amp;</span>SA</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Perfumería · Retail</p><h5 class="font-head text-base font-bold mt-1">SA&amp;SA Perfumerías</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
                 </div>
-                <div class="p-6 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs kicker" style="color: var(--accent);">Podología · Salud</p>
-                        <h3 class="font-head text-xl font-bold mt-1">Podólogo Iván Romera</h3>
-                    </div>
-                    <span class="arrow text-xl">→</span>
-                </div>
-            </a>
-
-            <!-- Marina Osteopatia -->
-            <a href="https://linzpe.github.io/web-marina-osteopatia-fisioterapia/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
-                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
-                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
-                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">marina-osteopatia · fisioterapia</span>
-                </div>
-                <div class="h-52 flex items-center justify-center" style="background: linear-gradient(135deg,#2F8E84,#246B63);">
-                    <span class="font-head text-3xl font-bold text-white">Marina Osteopatia</span>
-                </div>
-                <div class="p-6 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs kicker" style="color: var(--accent);">Fisioterapia · Osteopatía</p>
-                        <h3 class="font-head text-xl font-bold mt-1">Marina Osteopatia i Fisioteràpia</h3>
-                    </div>
-                    <span class="arrow text-xl">→</span>
-                </div>
-            </a>
-
-            <!-- Dra. Isabel Fernández -->
-            <a href="https://linzpe.github.io/web-clinica-dra-isabel-fernandez/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
-                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
-                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
-                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">clinica-isabel-fernandez · estética</span>
-                </div>
-                <div class="h-52 flex items-center justify-center" style="background: #0E0E10;">
-                    <span class="text-3xl" style="color:#C4A05A; font-family:'Fraunces',serif;">Dra. Isabel Fernández</span>
-                </div>
-                <div class="p-6 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs kicker" style="color: var(--accent);">Medicina estética · Salud</p>
-                        <h3 class="font-head text-xl font-bold mt-1">Clínica Dra. Isabel Fernández</h3>
-                    </div>
-                    <span class="arrow text-xl">→</span>
-                </div>
-            </a>
-
-            <!-- SA&SA Perfumerías -->
-            <a href="https://linzpe.github.io/web-sasa-perfumerias/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
-                <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="border-color: var(--line);">
-                    <span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span><span class="chrome-dot" style="background:#e0ddd5"></span>
-                    <span class="ml-3 text-[11px] truncate" style="color: var(--muted);">sasa-perfumerias · perfumería</span>
-                </div>
-                <div class="h-52 flex items-center justify-center" style="background: #110D14;">
-                    <span class="font-head text-4xl font-bold" style="color:#F2EBE2;">SA<span style="color:#CBA468;">&amp;</span>SA</span>
-                </div>
-                <div class="p-6 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs kicker" style="color: var(--accent);">Perfumería · Retail</p>
-                        <h3 class="font-head text-xl font-bold mt-1">SA&amp;SA Perfumerías</h3>
-                    </div>
-                    <span class="arrow text-xl">→</span>
-                </div>
-            </a>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- SERVICIOS -->
-<section id="servicios" class="py-20 sm:py-28 mt-8" style="background: var(--ink); color: var(--bg);">
+<section id="servicios" class="py-20 sm:py-28" style="background: var(--ink); color: var(--bg);">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
         <div class="max-w-2xl">
             <p class="kicker" style="color: #C9A98A;">Servicios</p>
@@ -327,82 +316,8 @@
     </div>
 </section>
 
-<!-- PLANES -->
-<section id="planes" class="py-20 sm:py-28" style="background: var(--surface-2);">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="max-w-2xl">
-            <p class="kicker" style="color: var(--accent);">Planes</p>
-            <h2 class="mt-4 font-head font-extrabold text-3xl sm:text-4xl tracking-tight">Precios claros, sin sorpresas</h2>
-            <p class="mt-5 text-base" style="color: var(--muted);">Un pago único por tu web y una cuota mensual de mantenimiento (alojamiento, soporte y cambios). Elige el que mejor encaje y hablamos.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6 mt-14 items-stretch">
-
-            <!-- ECONÓMICO -->
-            <div class="rounded-2xl p-8 flex flex-col" style="background: var(--surface); border: 1px solid var(--line);">
-                <p class="kicker text-xs" style="color: var(--accent);">Económico</p>
-                <div class="mt-4 flex items-end gap-2">
-                    <span class="font-head text-5xl font-extrabold">150€</span>
-                    <span class="text-sm mb-1.5" style="color: var(--muted);">la web</span>
-                </div>
-                <p class="mt-2 text-sm" style="color: var(--muted);">+ 30€/mes de mantenimiento</p>
-                <ul class="mt-7 space-y-3 text-sm flex-1">
-                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Web de 1 página a medida</li>
-                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Adaptada a móvil y tablet</li>
-                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Tus fotos optimizadas</li>
-                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Botón de WhatsApp y formulario</li>
-                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Alojamiento incluido</li>
-                </ul>
-                <a href="https://wa.me/34645333722?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Plan%20Econ%C3%B3mico%20(web%20150%E2%82%AC%20%2B%2030%E2%82%AC%2Fmes)" target="_blank" rel="noopener"
-                   class="mt-8 text-center px-6 py-3.5 text-xs kicker text-white rounded-full transition-opacity hover:opacity-90" style="background: var(--ink);">Lo quiero · Hablamos</a>
-            </div>
-
-            <!-- MEDIUM (destacado) -->
-            <div class="rounded-2xl p-8 flex flex-col relative md:-mt-4 md:mb-0 shadow-xl" style="background: var(--ink); color:#fff;">
-                <span class="absolute top-5 right-5 text-[10px] kicker px-3 py-1 rounded-full" style="background:#C9A57E; color: var(--ink);">Más popular</span>
-                <p class="kicker text-xs" style="color:#C9A57E;">Medium</p>
-                <div class="mt-4 flex items-end gap-2">
-                    <span class="font-head text-5xl font-extrabold">250€</span>
-                    <span class="text-sm mb-1.5" style="color: rgba(255,255,255,.6);">la web</span>
-                </div>
-                <p class="mt-2 text-sm" style="color: rgba(255,255,255,.6);">+ 40€/mes de mantenimiento</p>
-                <ul class="mt-7 space-y-3 text-sm flex-1">
-                    <li class="flex gap-3"><span style="color:#C9A57E;">✓</span>Todo lo del plan Económico</li>
-                    <li class="flex gap-3"><span style="color:#C9A57E;">✓</span>Varias secciones y galería de fotos</li>
-                    <li class="flex gap-3"><span style="color:#C9A57E;">✓</span>Google Maps integrado</li>
-                    <li class="flex gap-3"><span style="color:#C9A57E;">✓</span>SEO básico para que te encuentren</li>
-                    <li class="flex gap-3"><span style="color:#C9A57E;">✓</span>Cambios pequeños cada mes</li>
-                </ul>
-                <a href="https://wa.me/34645333722?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Plan%20Medium%20(web%20250%E2%82%AC%20%2B%2040%E2%82%AC%2Fmes)" target="_blank" rel="noopener"
-                   class="mt-8 text-center px-6 py-3.5 text-xs kicker rounded-full transition-opacity hover:opacity-90" style="background:#fff; color: var(--ink);">Lo quiero · Hablamos</a>
-            </div>
-
-            <!-- PROFESIONAL -->
-            <div class="rounded-2xl p-8 flex flex-col" style="background: var(--surface); border: 1px solid var(--line);">
-                <p class="kicker text-xs" style="color: var(--accent);">Profesional</p>
-                <div class="mt-4 flex items-end gap-2">
-                    <span class="font-head text-5xl font-extrabold">400€</span>
-                    <span class="text-sm mb-1.5" style="color: var(--muted);">la web</span>
-                </div>
-                <p class="mt-2 text-sm" style="color: var(--muted);">+ 50€/mes de mantenimiento</p>
-                <ul class="mt-7 space-y-3 text-sm flex-1">
-                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Todo lo del plan Medium</li>
-                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Diseño premium a medida</li>
-                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Más páginas y secciones</li>
-                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>SEO avanzado</li>
-                    <li class="flex gap-3"><span style="color: var(--accent);">✓</span>Cambios con prioridad</li>
-                </ul>
-                <a href="https://wa.me/34645333722?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Plan%20Profesional%20(web%20400%E2%82%AC%20%2B%2050%E2%82%AC%2Fmes)" target="_blank" rel="noopener"
-                   class="mt-8 text-center px-6 py-3.5 text-xs kicker text-white rounded-full transition-opacity hover:opacity-90" style="background: var(--ink);">Lo quiero · Hablamos</a>
-            </div>
-
-        </div>
-        <p class="mt-8 text-xs" style="color: var(--muted);">Precios orientativos (IVA no incluido). El mantenimiento es mensual y puedes darte de baja cuando quieras.</p>
-    </div>
-</section>
-
 <!-- CONTACTO -->
-<section id="contacto" class="py-20 sm:py-28" style="background: var(--surface-2);">
+<section id="contacto" class="py-20 sm:py-28">
     <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
         <p class="kicker" style="color: var(--accent);">Contacto</p>
         <h2 class="mt-4 font-head font-extrabold text-4xl sm:text-5xl tracking-tight leading-tight">¿Damos vida a la web<br>de tu negocio?</h2>
@@ -461,7 +376,7 @@
     <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-5">
         <p class="font-head text-base font-extrabold">Linz<span style="color: var(--accent);">.</span> <span class="font-normal text-sm" style="color: var(--muted);">Estudio Web · Granada</span></p>
         <div class="flex items-center gap-7 text-sm" style="color: var(--muted);">
-            <a href="#proyectos" class="hover:text-[var(--ink)]">Proyectos</a>
+            <a href="#ejemplos" class="hover:text-[var(--ink)]">Ejemplos</a>
             <a href="#servicios" class="hover:text-[var(--ink)]">Servicios</a>
             <a href="#contacto" class="hover:text-[var(--ink)]">Contacto</a>
         </div>
