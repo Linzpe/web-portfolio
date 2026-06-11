@@ -421,3 +421,135 @@
 </footer>
 
 <!-- BOTÓN FLOTANTE WHATSAPP
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/34645333722?text=Hola%2C%20me%20interesa%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener"
+   class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-transform hover:scale-110"
+   style="background:#25D366;">
+    <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.115zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Mobile menu toggle
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+}
+
+// Sticky header
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    header && header.classList.toggle('shadow-md', window.scrollY > 10);
+});
+
+// Contact form
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+if (form) {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Enviando…';
+        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+        const data = await res.json();
+        if (data.success) { status.textContent = '¡Mensaje enviado! Te escribo pronto.'; form.reset(); }
+        else { status.textContent = 'Error al enviar. Escríbeme por WhatsApp.'; btn.disabled = false; btn.textContent = 'Enviar mensaje'; }
+    });
+}
+
+// ── LANGUAGE SWITCHER ──────────────────────────────────────────
+const translations = {
+    es: {
+        nav_plans: 'Planes', nav_examples: 'Ejemplos', nav_services: 'Servicios',
+        nav_process: 'Proceso', nav_contact: 'Contacto', nav_cta: 'Trabajemos juntos',
+        hero_kicker: 'Estudio de diseño web · Granada',
+        hero_h1: 'Webs para negocios locales que quieren crecer',
+        hero_desc: 'Diseño páginas web a medida para clínicas, salones, restaurantes y comercios. Precio fijo, sin sorpresas, con mantenimiento incluido.',
+        hero_cta1: 'Ver planes y ejemplos', hero_cta2: 'Pedir presupuesto',
+        stat1: 'Proyectos publicados', stat2: 'Diseño a medida', stat3: 'Negocios locales',
+        plans_kicker: 'Planes',
+        plans_h2: 'Precios claros, sin sorpresas',
+        plans_desc: 'Un pago único por tu web y una cuota mensual de mantenimiento. El precio depende de la cantidad de secciones, fotografías e información que necesites.',
+        ex_kicker: 'Ejemplos reales',
+        ex_h3: 'Algunos clientes que han contratado distintos planes',
+        ex_desc: 'Así puedes ver la diferencia entre una web sencilla y una más elaborada. Pincha en cualquiera para verla en vivo.',
+        serv_kicker: 'Servicios',
+        serv_h2: 'Me ocupo de todo, de principio a fin',
+        proc_kicker: 'Proceso',
+        proc_h2: 'Sencillo para ti, en tres pasos',
+        contact_kicker: 'Contacto',
+        contact_h2: '¿Damos vida a la web<br>de tu negocio?',
+        contact_desc: 'Cuéntame qué necesitas y te preparo una propuesta sin compromiso.',
+    },
+    en: {
+        nav_plans: 'Plans', nav_examples: 'Examples', nav_services: 'Services',
+        nav_process: 'Process', nav_contact: 'Contact', nav_cta: "Let's work together",
+        hero_kicker: 'Web design studio · Granada',
+        hero_h1: 'Websites for local businesses that want to grow',
+        hero_desc: 'I design custom websites for clinics, salons, restaurants and shops. Fixed price, no surprises, maintenance included.',
+        hero_cta1: 'See plans & examples', hero_cta2: 'Get a quote',
+        stat1: 'Published projects', stat2: 'Custom design', stat3: 'Local businesses',
+        plans_kicker: 'Plans',
+        plans_h2: 'Clear pricing, no surprises',
+        plans_desc: 'A one-time payment for your website plus a monthly maintenance fee. The price depends on the number of sections, photos and content you need.',
+        ex_kicker: 'Real examples',
+        ex_h3: 'Some clients who chose different plans',
+        ex_desc: 'See the difference between a simple site and a more elaborate one. Click any to view it live.',
+        serv_kicker: 'Services',
+        serv_h2: 'I handle everything, from start to finish',
+        proc_kicker: 'Process',
+        proc_h2: 'Simple for you, in three steps',
+        contact_kicker: 'Contact',
+        contact_h2: 'Ready to bring your<br>business website to life?',
+        contact_desc: "Tell me what you need and I'll put together a no-obligation proposal.",
+    },
+    ar: {
+        nav_plans: 'الباقات', nav_examples: 'أمثلة', nav_services: 'الخدمات',
+        nav_process: 'طريقة العمل', nav_contact: 'اتصل بي', nav_cta: 'لنعمل معاً',
+        hero_kicker: 'استوديو تصميم مواقع · غرناطة',
+        hero_h1: 'مواقع إلكترونية للأعمال المحلية التي تريد النمو',
+        hero_desc: 'أصمّم مواقع مخصصة للعيادات والصالونات والمطاعم والمتاجر. سعر ثابت بدون مفاجآت، مع صيانة مشمولة.',
+        hero_cta1: 'عرض الباقات والأمثلة', hero_cta2: 'طلب عرض سعر',
+        stat1: 'مشاريع منشورة', stat2: 'تصميم مخصص', stat3: 'أعمال محلية',
+        plans_kicker: 'الباقات',
+        plans_h2: 'أسعار واضحة بدون مفاجآت',
+        plans_desc: 'دفعة واحدة لإنشاء موقعك وقسط شهري للصيانة. يعتمد السعر على عدد الأقسام والصور والمحتوى الذي تحتاجه.',
+        ex_kicker: 'أمثلة حقيقية',
+        ex_h3: 'بعض العملاء الذين اختاروا باقات مختلفة',
+        ex_desc: 'شاهد الفرق بين موقع بسيط وآخر أكثر تفصيلاً. انقر على أي منها لرؤيته مباشرة.',
+        serv_kicker: 'الخدمات',
+        serv_h2: 'أتولى كل شيء من البداية إلى النهاية',
+        proc_kicker: 'طريقة العمل',
+        proc_h2: 'بسيط لك، في ثلاث خطوات',
+        contact_kicker: 'اتصل بي',
+        contact_h2: 'هل نُحيي موقع<br>عملك معاً؟',
+        contact_desc: 'أخبرني بما تحتاجه وسأُعدّ لك عرضاً بدون التزام.',
+    }
+};
+
+function setLang(lang) {
+    const t = translations[lang];
+    if (!t) return;
+
+    // Update data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+
+    // RTL / LTR + font
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    // Active button state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('onclick') === `setLang('${lang}')`);
+    });
+}
+</script>
+</body>
+</html>
