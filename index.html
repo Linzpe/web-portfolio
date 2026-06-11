@@ -67,7 +67,7 @@
 <body class="flex flex-col min-h-screen antialiased">
 
 <!-- NAV -->
-<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300" style="background: transparent;">
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 shadow-sm" style="background: var(--bg); border-bottom: 1px solid var(--line);">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
         <div class="flex items-center justify-between h-20">
             <a href="#inicio" class="font-head text-lg font-extrabold tracking-tight">Linz<span style="color: var(--accent);">.</span></a>
@@ -442,7 +442,7 @@ if (menuBtn && mobileMenu) {
 // Sticky header
 const header = document.querySelector('header');
 window.addEventListener('scroll', () => {
-    header && header.classList.toggle('shadow-md', window.scrollY > 10);
+    
 });
 
 // Contact form
