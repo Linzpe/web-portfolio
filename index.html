@@ -207,6 +207,10 @@
                         <div class="card-preview" style="background:#DCEAF2;"><span class="card-display text-2xl sm:text-3xl" style="color:#3B6E8C;">Olga Cardona</span></div>
                         <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Podología · Salud</p><h5 class="font-head text-base font-bold mt-1">Centre Podològic Olga Cardona</h5></div><span class="arrow text-xl">→</span></div>
                     </a>
+                    <a href="https://linzpe.github.io/web-clinica-dental-navarro-munoz/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#F2E9E4;"><span class="card-display text-2xl sm:text-3xl font-head italic" style="color:#7B1A2A;">Navarro &amp; Muñoz</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Clínica dental · Salud</p><h5 class="font-head text-base font-bold mt-1">Clínica Dental Navarro &amp; Muñoz</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
                 </div>
             </div>
 
@@ -425,23 +429,4 @@
                 const res = await fetch(form.action, {
                     method: 'POST',
                     headers: { 'Accept': 'application/json' },
-                    body: new FormData(form)
-                });
-                const data = await res.json();
-                if (res.ok && data.success) {
-                    status.style.color = '#1f9d55';
-                    status.textContent = '¡Gracias! Tu mensaje se ha enviado. Te responderé pronto.';
-                    form.reset();
-                } else {
-                    status.style.color = '#c0392b';
-                    status.textContent = 'No se pudo enviar. Escríbeme por WhatsApp mientras tanto.';
-                }
-            } catch (err) {
-                status.style.color = '#c0392b';
-                status.textContent = 'No se pudo enviar. Escríbeme por WhatsApp mientras tanto.';
-            }
-        });
-    }
-</script>
-</body>
-</html>
+                
