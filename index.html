@@ -54,6 +54,121 @@
         .lang-btn.active { color: var(--ink); border-color: var(--ink); }
         .lang-sep { color: var(--line); font-size: .8rem; user-select: none; }
 
+        /* ── OFERTA BANNER ── */
+        #oferta-banner {
+            background: var(--ink); color: #fff;
+            padding: .75rem 1.5rem;
+            display: flex; align-items: center; justify-content: center; gap: 1.5rem;
+            font-size: .72rem; font-weight: 500; letter-spacing: .06em;
+            text-align: center; flex-wrap: wrap;
+            border-bottom: 1px solid rgba(201,165,126,.3);
+            position: relative; z-index: 60;
+        }
+        #oferta-banner strong { color: #C9A57E; font-weight: 700; }
+        .oferta-badge {
+            background: #C9A57E; color: var(--ink);
+            font-size: .62rem; font-weight: 800; letter-spacing: .12em;
+            text-transform: uppercase; padding: .25rem .7rem;
+            border-radius: 2px; white-space: nowrap;
+        }
+        .oferta-close {
+            position: absolute; right: 1rem; top: 50%; transform: translateY(-50%);
+            background: none; border: none; color: rgba(255,255,255,.4);
+            cursor: pointer; font-size: 1.1rem; line-height: 1; padding: .2rem .4rem;
+            transition: color .2s;
+        }
+        .oferta-close:hover { color: #fff; }
+
+        /* ── MARQUEE ── */
+        .marquee-wrap {
+            overflow: hidden; background: var(--surface-2);
+            border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+            padding: .85rem 0;
+        }
+        .marquee-track {
+            display: flex; gap: 0;
+            animation: marquee-scroll 28s linear infinite;
+            white-space: nowrap; width: max-content;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+        .marquee-item {
+            padding: 0 2.5rem;
+            font-size: .68rem; font-weight: 700; letter-spacing: .2em;
+            text-transform: uppercase; color: var(--muted);
+            display: flex; align-items: center; gap: 2.5rem;
+        }
+        .marquee-item::after {
+            content: '✦';
+            color: var(--accent); font-size: .55rem;
+        }
+        @keyframes marquee-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        /* ── SECTION TITLES (new scale) ── */
+        .sec-kicker {
+            font-size: .65rem; font-weight: 700; letter-spacing: .28em;
+            text-transform: uppercase; color: var(--accent);
+            display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+        }
+        .sec-kicker::after { content: ''; flex: 0 0 48px; height: 1px; background: var(--accent); opacity: .5; }
+        .sec-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.6rem, 6vw, 5rem);
+            font-weight: 400; font-style: italic;
+            line-height: .95; letter-spacing: -.01em;
+            color: var(--ink);
+        }
+        .sec-title strong { font-style: normal; font-family: var(--font-head); font-weight: 800; }
+
+        /* ── PLAN LABEL LARGE ── */
+        .plan-label-lg {
+            display: flex; align-items: center; gap: 1.5rem;
+            margin-bottom: 2rem; padding-bottom: 1.2rem;
+            border-bottom: 2px solid var(--ink);
+        }
+        .plan-label-lg .plan-num {
+            font-family: 'Fraunces', serif; font-style: italic;
+            font-size: 4rem; line-height: 1; color: var(--accent); font-weight: 400;
+        }
+        .plan-label-lg .plan-info h4 {
+            font-family: var(--font-head); font-size: 1.5rem; font-weight: 800; letter-spacing: -.01em;
+        }
+        .plan-label-lg .plan-info span {
+            font-size: .8rem; color: var(--muted); font-weight: 400; letter-spacing: .04em;
+        }
+
+        /* ── A MEDIDA SECTION ── */
+        #a-medida {
+            background: linear-gradient(135deg, #1A1916 0%, #2A2520 100%);
+            color: #fff; padding: 5rem 2rem;
+        }
+        .a-medida-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+        .a-medida-inner .sec-kicker { justify-content: center; color: #C9A57E; }
+        .a-medida-inner .sec-kicker::after { background: #C9A57E; }
+        .a-medida-title {
+            font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+            font-size: clamp(2.5rem, 6vw, 4.5rem); color: #fff; line-height: 1.05;
+            margin-bottom: 1.2rem;
+        }
+        .a-medida-title strong { font-style: normal; color: #C9A57E; }
+        .a-medida-desc { color: rgba(255,255,255,.55); font-size: 1rem; line-height: 1.8; max-width: 520px; margin: 0 auto 2.5rem; }
+        .wa-btn-big {
+            display: inline-flex; align-items: center; gap: .8rem;
+            background: #25D366; color: #fff;
+            padding: 1.1rem 3rem; font-size: .75rem; font-weight: 700;
+            letter-spacing: .12em; text-transform: uppercase;
+            text-decoration: none; border-radius: 4px;
+            transition: background .25s, transform .25s;
+            box-shadow: 0 8px 32px rgba(37,211,102,.3);
+        }
+        .wa-btn-big:hover { background: #1ebe5c; transform: translateY(-3px); }
+        .a-medida-note {
+            margin-top: 1.5rem; font-size: .75rem; color: rgba(255,255,255,.3);
+            letter-spacing: .06em;
+        }
+
         /* Arabic font override */
         [lang="ar"] body, [lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3,
         [lang="ar"] p, [lang="ar"] a, [lang="ar"] li, [lang="ar"] span,
@@ -110,15 +225,51 @@
     </div>
 </header>
 
+<!-- OFERTA BANNER -->
+<div id="oferta-banner">
+    <span class="oferta-badge">Oferta Apertura</span>
+    <span>Contrata antes del <strong>31 de julio</strong> y llévate <strong>2 meses de mantenimiento gratis</strong> · Válido para los próximos 8 clientes</span>
+    <a href="https://wa.me/34645333722?text=Hola%2C%20me%20interesa%20la%20Oferta%20de%20Apertura" target="_blank" rel="noopener" style="color:#C9A57E;text-decoration:underline;font-weight:700;white-space:nowrap;">Aprovecharla →</a>
+    <button class="oferta-close" onclick="this.parentElement.style.display='none'" aria-label="Cerrar">✕</button>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+    <div class="marquee-track">
+        <span class="marquee-item">Clínicas dentales</span>
+        <span class="marquee-item">Fisioterapia</span>
+        <span class="marquee-item">Restaurantes</span>
+        <span class="marquee-item">Estética y belleza</span>
+        <span class="marquee-item">Peluquerías</span>
+        <span class="marquee-item">Podología</span>
+        <span class="marquee-item">Medicina estética</span>
+        <span class="marquee-item">Comercios</span>
+        <span class="marquee-item">Moda de lujo</span>
+        <span class="marquee-item">Perfumerías</span>
+        <span class="marquee-item">Hostelería</span>
+        <span class="marquee-item">Clínicas dentales</span>
+        <span class="marquee-item">Fisioterapia</span>
+        <span class="marquee-item">Restaurantes</span>
+        <span class="marquee-item">Estética y belleza</span>
+        <span class="marquee-item">Peluquerías</span>
+        <span class="marquee-item">Podología</span>
+        <span class="marquee-item">Medicina estética</span>
+        <span class="marquee-item">Comercios</span>
+        <span class="marquee-item">Moda de lujo</span>
+        <span class="marquee-item">Perfumerías</span>
+        <span class="marquee-item">Hostelería</span>
+    </div>
+</div>
+
 <!-- HERO -->
 <section id="inicio" class="pt-36 pb-20 lg:pt-44 lg:pb-24">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <p class="kicker" style="color: var(--accent);" data-i18n="hero_kicker">Estudio de diseño web · Granada</p>
-        <h1 class="mt-7 font-head font-extrabold tracking-tight leading-[1.02] text-5xl sm:text-6xl lg:text-7xl max-w-4xl" data-i18n="hero_h1">
-            Webs que dan a tu negocio la imagen que <span class="serif-it" style="color: var(--accent);">merece</span>
+        <div class="sec-kicker" data-i18n="hero_kicker">Estudio de diseño web · Barcelona</div>
+        <h1 class="mt-5 sec-title max-w-4xl" data-i18n="hero_h1">
+            <strong>Webs</strong> que dan<br>a tu negocio la imagen<br>que <em style="color:var(--accent)">merece.</em>
         </h1>
         <p class="mt-8 text-lg leading-relaxed max-w-2xl" style="color: var(--muted);" data-i18n="hero_desc">
-            Diseño, publico y mantengo páginas web modernas para negocios locales. Cuidadas, rápidas y pensadas para que tus clientes te encuentren y confíen en ti.
+            Linz · Estudio Web diseña, publica y mantiene páginas web modernas para negocios locales. Cuidadas, rápidas y pensadas para que tus clientes te encuentren y confíen en ti.
         </p>
         <div class="mt-10 flex flex-wrap gap-4">
             <a href="#planes" class="px-8 py-3.5 text-xs kicker text-white rounded-full" style="background: var(--ink);" data-i18n="hero_cta1">Ver planes y ejemplos</a>
@@ -144,10 +295,10 @@
 <!-- PLANES -->
 <section id="planes" class="py-20 sm:py-28" style="background: var(--surface-2);">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="max-w-2xl">
-            <p class="kicker" style="color: var(--accent);" data-i18n="plans_kicker">Planes</p>
-            <h2 class="mt-4 font-head font-extrabold text-3xl sm:text-4xl tracking-tight" data-i18n="plans_h2">Precios claros, sin sorpresas</h2>
-            <p class="mt-5 text-base leading-relaxed" style="color: var(--muted);" data-i18n="plans_desc">Un pago único por tu web y una cuota mensual de mantenimiento. El precio depende de la cantidad de secciones, fotografías e información que necesites.</p>
+        <div class="max-w-3xl">
+            <div class="sec-kicker" data-i18n="plans_kicker">Planes</div>
+            <h2 class="sec-title" data-i18n="plans_h2"><strong>Precios</strong> claros,<br>sin <em style="color:var(--accent)">sorpresas.</em></h2>
+            <p class="mt-6 text-base leading-relaxed" style="color: var(--muted);" data-i18n="plans_desc">Un pago único por la web y una cuota mensual de mantenimiento. El precio depende de las secciones, fotografías e información que se necesiten.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 mt-14 items-stretch">
@@ -211,16 +362,19 @@
         <!-- EJEMPLOS POR PLAN -->
         <div id="ejemplos" class="mt-20 pt-16 border-t" style="border-color: var(--line);">
             <div class="max-w-3xl">
-                <p class="kicker" style="color: var(--accent);" data-i18n="ex_kicker">Ejemplos reales</p>
-                <h3 class="mt-4 font-head font-extrabold text-2xl sm:text-3xl tracking-tight" data-i18n="ex_h3">Algunos clientes que han contratado distintos planes</h3>
-                <p class="mt-4 text-base leading-relaxed" style="color: var(--muted);" data-i18n="ex_desc">Así puedes ver la diferencia entre una web sencilla y una más elaborada. Pincha en cualquiera para verla en vivo.</p>
+                <div class="sec-kicker" data-i18n="ex_kicker">Ejemplos reales</div>
+                <h3 class="sec-title" data-i18n="ex_h3"><strong>Proyectos</strong><br><em style="color:var(--accent)">publicados.</em></h3>
+                <p class="mt-6 text-base leading-relaxed" style="color: var(--muted);" data-i18n="ex_desc">Cada proyecto es único. Pincha en cualquier card para verlo en vivo y comprobar la diferencia entre planes.</p>
             </div>
 
             <!-- Plan Económico -->
-            <div class="mt-12">
-                <div class="flex items-baseline gap-4 mb-6">
-                    <h4 class="font-head text-xl font-bold" data-i18n="plan1_label">Plan Económico</h4>
-                    <span class="text-sm" style="color: var(--muted);" data-i18n="plan1_sublabel">150€ · web sencilla, 1 página</span>
+            <div class="mt-16">
+                <div class="plan-label-lg">
+                    <span class="plan-num">01</span>
+                    <div class="plan-info">
+                        <h4 data-i18n="plan1_label">Plan Económico</h4>
+                        <span data-i18n="plan1_sublabel">150€ · web sencilla, 1 página</span>
+                    </div>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <a href="https://linzpe.github.io/web-clinica-ivan-romera/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
@@ -255,10 +409,13 @@
             </div>
 
             <!-- Plan Medium -->
-            <div class="mt-14">
-                <div class="flex items-baseline gap-4 mb-6">
-                    <h4 class="font-head text-xl font-bold" data-i18n="plan2_label">Plan Medium</h4>
-                    <span class="text-sm" style="color: var(--muted);" data-i18n="plan2_sublabel">250€ · más secciones y fotos</span>
+            <div class="mt-16">
+                <div class="plan-label-lg">
+                    <span class="plan-num">02</span>
+                    <div class="plan-info">
+                        <h4 data-i18n="plan2_label">Plan Medium</h4>
+                        <span data-i18n="plan2_sublabel">250€ · más secciones y fotos</span>
+                    </div>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <a href="https://linzpe.github.io/web-el-rincon-de-julio/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
@@ -293,10 +450,13 @@
             </div>
 
             <!-- Plan Profesional -->
-            <div class="mt-14">
-                <div class="flex items-baseline gap-4 mb-6">
-                    <h4 class="font-head text-xl font-bold" data-i18n="plan3_label">Plan Profesional</h4>
-                    <span class="text-sm" style="color: var(--muted);" data-i18n="plan3_sublabel">400€ · diseño premium</span>
+            <div class="mt-16">
+                <div class="plan-label-lg">
+                    <span class="plan-num">03</span>
+                    <div class="plan-info">
+                        <h4 data-i18n="plan3_label">Plan Profesional</h4>
+                        <span data-i18n="plan3_sublabel">400€ · diseño premium</span>
+                    </div>
                 </div>
                 <div class="grid sm:grid-cols-2 gap-6 max-w-2xl">
                     <a href="https://linzpe.github.io/web-peluqueria-Mariana-Bayo/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
@@ -316,9 +476,9 @@
 <!-- SERVICIOS -->
 <section id="servicios" class="py-20 sm:py-28" style="background: var(--ink); color: var(--bg);">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="max-w-2xl">
-            <p class="kicker" style="color: #C9A98A;" data-i18n="serv_kicker">Servicios</p>
-            <h2 class="mt-4 font-head font-extrabold text-3xl sm:text-4xl tracking-tight" data-i18n="serv_h2">Me ocupo de todo, de principio a fin</h2>
+        <div class="max-w-3xl">
+            <div class="sec-kicker" style="color:#C9A98A;" data-i18n="serv_kicker">Servicios</div>
+            <h2 class="sec-title" style="color:#fff;" data-i18n="serv_h2"><strong style="font-style:normal">Todo</strong><br><em>incluido.</em></h2>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px mt-14" style="background: rgba(248,246,241,.14);">
             <div class="p-8" style="background: var(--ink);">
@@ -348,36 +508,51 @@
 <!-- PROCESO -->
 <section id="proceso" class="py-20 sm:py-28">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="max-w-2xl">
-            <p class="kicker" style="color: var(--accent);" data-i18n="proc_kicker">Proceso</p>
-            <h2 class="mt-4 font-head font-extrabold text-3xl sm:text-4xl tracking-tight" data-i18n="proc_h2">Sencillo para ti, en tres pasos</h2>
+        <div class="max-w-3xl">
+            <div class="sec-kicker" data-i18n="proc_kicker">Proceso</div>
+            <h2 class="sec-title" data-i18n="proc_h2"><strong>Sencillo</strong><br>para ti, en<br><em style="color:var(--accent)">tres pasos.</em></h2>
         </div>
         <div class="grid md:grid-cols-3 gap-10 mt-14">
             <div class="border-t pt-6" style="border-color: var(--ink);">
                 <p class="font-head text-sm font-bold" style="color: var(--accent);">01</p>
                 <h3 class="font-head text-2xl font-bold mt-3">Hablamos</h3>
-                <p class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">Me cuentas tu negocio y me pasas fotos y datos. Sin tecnicismos ni complicaciones.</p>
+                <p class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">Nos cuentas tu negocio y nos pasas fotos y datos. Sin tecnicismos ni complicaciones.</p>
             </div>
             <div class="border-t pt-6" style="border-color: var(--ink);">
                 <p class="font-head text-sm font-bold" style="color: var(--accent);">02</p>
                 <h3 class="font-head text-2xl font-bold mt-3">Diseño tu web</h3>
-                <p class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">Te enseño una primera versión y la pulimos juntos hasta que sea exactamente lo que quieres.</p>
+                <p class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">Se presenta una primera versión y se pule hasta que sea exactamente lo que se busca.</p>
             </div>
             <div class="border-t pt-6" style="border-color: var(--ink);">
                 <p class="font-head text-sm font-bold" style="color: var(--accent);">03</p>
                 <h3 class="font-head text-2xl font-bold mt-3">La publico</h3>
-                <p class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">La pongo online y me encargo del mantenimiento. Tú solo te dedicas a tu negocio.</p>
+                <p class="mt-3 text-sm leading-relaxed" style="color: var(--muted);">Se publica y se gestiona el mantenimiento. El cliente solo se dedica a su negocio.</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- A MEDIDA -->
+<section id="a-medida">
+    <div class="a-medida-inner">
+        <div class="sec-kicker">Proyecto a medida</div>
+        <div class="a-medida-title">¿Quieres algo <strong>diferente</strong><br>y totalmente <em>personalizado?</em></div>
+        <p class="a-medida-desc">Si tienes en mente algo que va más allá de los planes estándar — una web muy específica, con características únicas o una identidad de marca muy definida — escribe directamente por WhatsApp. Se prepara una propuesta a medida sin ningún compromiso.</p>
+        <a href="https://wa.me/34645333722?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20proyecto%20web%20a%20medida.%20Mi%20negocio%20es%3A%20%5Bnombre%5D.%20Sector%3A%20%5Bsector%5D.%20Lo%20que%20busco%3A%20%5Bdescripci%C3%B3n%5D"
+           target="_blank" rel="noopener" class="wa-btn-big">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Solicitar proyecto a medida
+        </a>
+        <p class="a-medida-note">Respuesta en menos de 24 horas · Sin compromiso · Presupuesto gratuito</p>
     </div>
 </section>
 
 <!-- CONTACTO -->
 <section id="contacto" class="py-20 sm:py-28">
     <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
-        <p class="kicker" style="color: var(--accent);" data-i18n="contact_kicker">Contacto</p>
-        <h2 class="mt-4 font-head font-extrabold text-4xl sm:text-5xl tracking-tight leading-tight" data-i18n="contact_h2">¿Damos vida a la web<br>de tu negocio?</h2>
-        <p class="mt-6 text-base" style="color: var(--muted);" data-i18n="contact_desc">Cuéntame qué necesitas y te preparo una propuesta sin compromiso.</p>
+        <div class="sec-kicker" style="justify-content:center;" data-i18n="contact_kicker">Contacto</div>
+        <h2 class="sec-title" data-i18n="contact_h2"><strong>¿Damos vida</strong><br>a la web de<br><em style="color:var(--accent)">tu negocio?</em></h2>
+        <p class="mt-6 text-base" style="color: var(--muted);" data-i18n="contact_desc">Cuéntanos qué necesitas y se prepara una propuesta sin compromiso.</p>
         <!-- FORMULARIO (Web3Forms) -->
         <form id="contact-form" action="https://api.web3forms.com/api/submit" method="POST"
               class="mt-10 text-left rounded-2xl p-6 sm:p-8" style="background: var(--surface); border: 1px solid var(--line);">
@@ -500,130 +675,4 @@ const translations = {
         p1f1: 'Web de 1 página a medida', p1f2: 'Adaptada a móvil y tablet', p1f3: 'Tus fotos optimizadas',
         p1f4: 'Botón de WhatsApp o teléfono', p1f5: 'Alojamiento incluido',
         p2f1: 'Todo lo del plan Económico', p2f2: 'Varias secciones y galería de fotos',
-        p2f3: 'Google Maps integrado', p2f4: 'SEO básico para que te encuentren', p2f5: 'Cambios pequeños cada mes',
-        p3f1: 'Todo lo del plan Medium', p3f2: 'Identidad visual premium a medida',
-        p3f3: 'Más páginas y secciones', p3f4: 'SEO avanzado + seguimiento', p3f5: 'Cambios prioritarios cada mes',
-        plan_cta: 'Lo quiero · Hablamos',
-        plans_disclaimer: 'Precios orientativos (IVA no incluido). El mantenimiento es mensual y puedes darte de baja cuando quieras.',
-        plan1_label: 'Plan Económico', plan1_sublabel: '150€ · web sencilla, 1 página',
-        plan2_label: 'Plan Medium', plan2_sublabel: '250€ · más secciones y fotos',
-        plan3_label: 'Plan Profesional', plan3_sublabel: '400€ · diseño premium',
-        stat1: 'Proyectos publicados', stat2: 'Diseño a medida', stat3: 'Negocios locales',
-        plans_kicker: 'Planes',
-        plans_h2: 'Precios claros, sin sorpresas',
-        plans_desc: 'Un pago único por tu web y una cuota mensual de mantenimiento. El precio depende de la cantidad de secciones, fotografías e información que necesites.',
-        ex_kicker: 'Ejemplos reales',
-        ex_h3: 'Algunos clientes que han contratado distintos planes',
-        ex_desc: 'Así puedes ver la diferencia entre una web sencilla y una más elaborada. Pincha en cualquiera para verla en vivo.',
-        serv_kicker: 'Servicios',
-        serv_h2: 'Me ocupo de todo, de principio a fin',
-        proc_kicker: 'Proceso',
-        proc_h2: 'Sencillo para ti, en tres pasos',
-        contact_kicker: 'Contacto',
-        contact_h2: '¿Damos vida a la web<br>de tu negocio?',
-        contact_desc: 'Cuéntame qué necesitas y te preparo una propuesta sin compromiso.',
-    },
-    en: {
-        nav_plans: 'Plans', nav_examples: 'Examples', nav_services: 'Services',
-        nav_process: 'Process', nav_contact: 'Contact', nav_cta: "Let's work together",
-        hero_kicker: 'Web design studio · Granada',
-        hero_h1: 'Websites for local businesses that want to grow',
-        hero_desc: 'I design custom websites for clinics, salons, restaurants and shops. Fixed price, no surprises, maintenance included.',
-        hero_cta1: 'See plans & examples', hero_cta2: 'Get a quote',
-        plan1_name: 'Basic', plan2_name: 'Medium', plan3_name: 'Professional',
-        plan2_badge: 'Most popular', plan3_badge: 'To grow',
-        price_suffix: 'the site',
-        plan1_maint: '+ €30/month maintenance',
-        plan2_maint: '+ €40/month maintenance',
-        plan3_maint: '+ €50/month maintenance',
-        plan3_pitch: 'For businesses that want to truly stand out and turn their website into an active lead-generation tool.',
-        p1f1: '1-page custom website', p1f2: 'Mobile & tablet responsive', p1f3: 'Your photos optimised',
-        p1f4: 'WhatsApp or phone button', p1f5: 'Hosting included',
-        p2f1: 'Everything in Basic plan', p2f2: 'Multiple sections & photo gallery',
-        p2f3: 'Google Maps integrated', p2f4: 'Basic SEO to get found online', p2f5: 'Small updates each month',
-        p3f1: 'Everything in Medium plan', p3f2: 'Premium custom visual identity',
-        p3f3: 'More pages & sections', p3f4: 'Advanced SEO + tracking', p3f5: 'Priority changes each month',
-        plan_cta: 'I want it · Let\'s talk',
-        plans_disclaimer: 'Indicative prices (VAT not included). Maintenance is monthly and you can cancel any time.',
-        plan1_label: 'Basic Plan', plan1_sublabel: '€150 · simple, 1-page site',
-        plan2_label: 'Medium Plan', plan2_sublabel: '€250 · more sections & photos',
-        plan3_label: 'Professional Plan', plan3_sublabel: '€400 · premium design',
-        stat1: 'Published projects', stat2: 'Custom design', stat3: 'Local businesses',
-        plans_kicker: 'Plans',
-        plans_h2: 'Clear pricing, no surprises',
-        plans_desc: 'A one-time payment for your website plus a monthly maintenance fee. The price depends on the number of sections, photos and content you need.',
-        ex_kicker: 'Real examples',
-        ex_h3: 'Some clients who chose different plans',
-        ex_desc: 'See the difference between a simple site and a more elaborate one. Click any to view it live.',
-        serv_kicker: 'Services',
-        serv_h2: 'I handle everything, from start to finish',
-        proc_kicker: 'Process',
-        proc_h2: 'Simple for you, in three steps',
-        contact_kicker: 'Contact',
-        contact_h2: 'Ready to bring your<br>business website to life?',
-        contact_desc: "Tell me what you need and I'll put together a no-obligation proposal.",
-    },
-    ar: {
-        nav_plans: 'الباقات', nav_examples: 'أعمالنا', nav_services: 'خدماتنا',
-        nav_process: 'كيف نعمل', nav_contact: 'تواصل معنا', nav_cta: 'ابدأ مشروعك',
-        hero_kicker: 'استوديو تصميم مواقع احترافية · غرناطة',
-        hero_h1: 'موقعك الإلكتروني… واجهة نجاح عملك',
-        hero_desc: 'نصمّم مواقع احترافية للعيادات والصالونات والمطاعم والمحلات التجارية. سعر واضح ثابت، بلا رسوم مخفية، مع خدمة صيانة دورية.',
-        hero_cta1: 'اكتشف باقاتنا وأعمالنا', hero_cta2: 'احصل على عرض سعر',
-        plan1_name: 'الأساسية', plan2_name: 'المتوسطة', plan3_name: 'الاحترافية',
-        plan2_badge: 'الأكثر طلباً', plan3_badge: 'للتميّز والنمو',
-        price_suffix: 'ثمن الموقع',
-        plan1_maint: 'صيانة شهرية بـ 30€ فقط',
-        plan2_maint: 'صيانة شهرية بـ 40€ فقط',
-        plan3_maint: 'صيانة شهرية بـ 50€ فقط',
-        plan3_pitch: 'للأعمال الجادة التي تريد موقعاً يعكس احترافيتها ويجذب عملاء جدد باستمرار.',
-        p1f1: 'موقع بصفحة واحدة مصمَّم خصيصاً لك', p1f2: 'يعمل بشكل مثالي على الجوال والتابلت', p1f3: 'صورك محسَّنة وجاهزة للنشر',
-        p1f4: 'زر واتساب أو اتصال مباشر', p1f5: 'استضافة مجانية مشمولة',
-        p2f1: 'كل مميزات الباقة الأساسية', p2f2: 'أقسام متعددة وصالة صور احترافية',
-        p2f3: 'خريطة Google مدمجة مباشرة', p2f4: 'تهيئة للظهور في نتائج البحث', p2f5: 'تعديلات شهرية حسب طلبك',
-        p3f1: 'كل مميزات الباقة المتوسطة', p3f2: 'هوية بصرية كاملة ومميزة',
-        p3f3: 'صفحات وأقسام إضافية حسب حاجتك', p3f4: 'تحسين متقدم لمحركات البحث مع متابعة دورية', p3f5: 'تعديلات فورية بأولوية قصوى',
-        plan_cta: 'أنا مهتم · تواصل معي',
-        plans_disclaimer: 'الأسعار تقريبية وغير شاملة للضريبة. الصيانة شهرية ويمكنك إلغاء الاشتراك متى شئت.',
-        plan1_label: 'الباقة الأساسية', plan1_sublabel: '150€ · موقع أنيق بصفحة واحدة',
-        plan2_label: 'الباقة المتوسطة', plan2_sublabel: '250€ · محتوى أغنى وتصميم أكثر تفصيلاً',
-        plan3_label: 'الباقة الاحترافية', plan3_sublabel: '400€ · تصميم فاخر وهوية بصرية متكاملة',
-        stat1: 'مشروع منشور', stat2: 'تصميم حصري لكل عميل', stat3: 'أعمال محلية ناجحة',
-        plans_kicker: 'باقاتنا',
-        plans_h2: 'أسعار شفافة، بلا مفاجآت',
-        plans_desc: 'تدفع مرة واحدة لإطلاق موقعك، ثم قسط شهري بسيط للصيانة. السعر يعتمد على حجم المحتوى والأقسام التي تحتاجها.',
-        ex_kicker: 'أعمال حقيقية',
-        ex_h3: 'عملاء اختاروا باقات مختلفة… هذه نتائجهم',
-        ex_desc: 'اكتشف الفرق بين موقع بسيط وآخر احترافي. اضغط على أي موقع لتراه مباشرة.',
-        serv_kicker: 'خدماتنا',
-        serv_h2: 'نتكفّل بكل شيء، من الفكرة حتى الإطلاق',
-        proc_kicker: 'كيف نعمل',
-        proc_h2: 'ثلاث خطوات بسيطة وموقعك جاهز',
-        contact_kicker: 'تواصل معنا',
-        contact_h2: 'جاهز لإطلاق موقع<br>عملك؟',
-        contact_desc: 'أخبرنا عن مشروعك وسنعدّ لك عرضاً مخصصاً بدون أي التزام.',
-    }
-};
-
-function setLang(lang) {
-    const t = translations[lang];
-    if (!t) return;
-
-    // Update data-i18n elements
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (t[key] !== undefined) el.innerHTML = t[key];
-    });
-
-    // RTL / LTR + font
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-
-    // Active button state
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('onclick') === `setLang('${lang}')`);
-    });
-}
-</script>
-</body>
-</html>
+        p2f3: 'Google Maps integrado', p2f4: 'SEO básico para que te encue
