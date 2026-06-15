@@ -281,6 +281,10 @@
                         <div class="card-preview" style="background:#FDF0F4;"><span class="card-display text-2xl sm:text-3xl" style="color:#C95E7B; font-family:var(--font-head); font-style:italic;">Quirós</span></div>
                         <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Estética · Terapéutico</p><h5 class="font-head text-base font-bold mt-1">Centre Terapèutic Quirós</h5></div><span class="arrow text-xl">→</span></div>
                     </a>
+                    <a href="https://linzpe.github.io/web-spazio-medicina-estetica/" target="_blank" rel="noopener" class="card block rounded-2xl overflow-hidden" style="background: var(--surface); border: 1px solid var(--line);">
+                        <div class="card-preview" style="background:#FAF5EF;"><span class="card-display text-2xl sm:text-3xl" style="color:#9A7B5A; font-family:var(--font-head); font-style:italic;">Spazio</span></div>
+                        <div class="p-5 flex items-center justify-between"><div><p class="text-xs kicker" style="color: var(--accent);">Medicina estética · Belleza</p><h5 class="font-head text-base font-bold mt-1">Spazio Medicina Estética</h5></div><span class="arrow text-xl">→</span></div>
+                    </a>
                 </div>
             </div>
 
@@ -581,4 +585,45 @@ const translations = {
         p3f3: 'صفحات وأقسام إضافية حسب حاجتك', p3f4: 'تحسين متقدم لمحركات البحث مع متابعة دورية', p3f5: 'تعديلات فورية بأولوية قصوى',
         plan_cta: 'أنا مهتم · تواصل معي',
         plans_disclaimer: 'الأسعار تقريبية وغير شاملة للضريبة. الصيانة شهرية ويمكنك إلغاء الاشتراك متى شئت.',
-        plan1_label: '
+        plan1_label: 'الباقة الأساسية', plan1_sublabel: '150€ · موقع أنيق بصفحة واحدة',
+        plan2_label: 'الباقة المتوسطة', plan2_sublabel: '250€ · محتوى أغنى وتصميم أكثر تفصيلاً',
+        plan3_label: 'الباقة الاحترافية', plan3_sublabel: '400€ · تصميم فاخر وهوية بصرية متكاملة',
+        stat1: 'مشروع منشور', stat2: 'تصميم حصري لكل عميل', stat3: 'أعمال محلية ناجحة',
+        plans_kicker: 'باقاتنا',
+        plans_h2: 'أسعار شفافة، بلا مفاجآت',
+        plans_desc: 'تدفع مرة واحدة لإطلاق موقعك، ثم قسط شهري بسيط للصيانة. السعر يعتمد على حجم المحتوى والأقسام التي تحتاجها.',
+        ex_kicker: 'أعمال حقيقية',
+        ex_h3: 'عملاء اختاروا باقات مختلفة… هذه نتائجهم',
+        ex_desc: 'اكتشف الفرق بين موقع بسيط وآخر احترافي. اضغط على أي موقع لتراه مباشرة.',
+        serv_kicker: 'خدماتنا',
+        serv_h2: 'نتكفّل بكل شيء، من الفكرة حتى الإطلاق',
+        proc_kicker: 'كيف نعمل',
+        proc_h2: 'ثلاث خطوات بسيطة وموقعك جاهز',
+        contact_kicker: 'تواصل معنا',
+        contact_h2: 'جاهز لإطلاق موقع<br>عملك؟',
+        contact_desc: 'أخبرنا عن مشروعك وسنعدّ لك عرضاً مخصصاً بدون أي التزام.',
+    }
+};
+
+function setLang(lang) {
+    const t = translations[lang];
+    if (!t) return;
+
+    // Update data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+
+    // RTL / LTR + font
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    // Active button state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('onclick') === `setLang('${lang}')`);
+    });
+}
+</script>
+</body>
+</html>
