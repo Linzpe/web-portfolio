@@ -547,61 +547,6 @@
     </div>
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="py-20 sm:py-28">
-    <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
-        <div class="sec-kicker" style="justify-content:center;" data-i18n="contact_kicker">Contacto</div>
-        <h2 class="sec-title" data-i18n="contact_h2"><strong>¿Damos vida</strong><br>a la web de<br><em style="color:var(--accent)">tu negocio?</em></h2>
-        <p class="mt-6 text-base" style="color: var(--muted);" data-i18n="contact_desc">Cuéntanos qué necesitas y se prepara una propuesta sin compromiso.</p>
-        <!-- FORMULARIO (Web3Forms) -->
-        <form id="contact-form" action="https://api.web3forms.com/api/submit" method="POST"
-              class="mt-10 text-left rounded-2xl p-6 sm:p-8" style="background: var(--surface); border: 1px solid var(--line);">
-            <input type="hidden" name="access_key" value="04c92627-8157-4ce4-aa83-0b2f6cdcad55">
-            <input type="hidden" name="subject" value="Nuevo contacto desde tu portfolio web">
-            <input type="hidden" name="from_name" value="Portfolio Linz">
-            <!-- honeypot anti-spam -->
-            <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
-
-            <div class="grid sm:grid-cols-2 gap-4">
-                <div>
-                    <label class="block text-xs kicker mb-2" style="color: var(--muted);">Nombre</label>
-                    <input type="text" name="name" required placeholder="Tu nombre"
-                           class="w-full rounded-xl px-4 py-3 text-sm outline-none focus:ring-2"
-                           style="background: var(--bg); border: 1px solid var(--line); color: var(--ink);">
-                </div>
-                <div>
-                    <label class="block text-xs kicker mb-2" style="color: var(--muted);">Tu email</label>
-                    <input type="email" name="email" required placeholder="tucorreo@ejemplo.com"
-                           class="w-full rounded-xl px-4 py-3 text-sm outline-none focus:ring-2"
-                           style="background: var(--bg); border: 1px solid var(--line); color: var(--ink);">
-                </div>
-            </div>
-            <div class="mt-4">
-                <label class="block text-xs kicker mb-2" style="color: var(--muted);">Mensaje</label>
-                <textarea name="message" rows="4" required placeholder="Cuéntame sobre tu negocio y qué necesitas"
-                          class="w-full rounded-xl px-4 py-3 text-sm outline-none focus:ring-2"
-                          style="background: var(--bg); border: 1px solid var(--line); color: var(--ink);"></textarea>
-            </div>
-            <button type="submit"
-                    class="mt-6 w-full px-9 py-4 text-xs kicker text-white rounded-full transition-opacity hover:opacity-90"
-                    style="background: var(--ink);">Enviar mensaje</button>
-            <p id="form-status" class="mt-4 text-sm text-center" style="color: var(--muted);"></p>
-        </form>
-
-        <div class="mt-8 flex items-center gap-4">
-            <span class="flex-1 h-px" style="background: var(--line);"></span>
-            <span class="text-xs kicker" style="color: var(--muted);">o por WhatsApp</span>
-            <span class="flex-1 h-px" style="background: var(--line);"></span>
-        </div>
-        <div class="mt-8 flex justify-center">
-            <a href="https://wa.me/34645333722?text=Hola%2C%20me%20interesa%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener" class="px-9 py-4 text-xs kicker text-white rounded-full inline-flex items-center gap-2" style="background:#25D366;">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.115zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                Escríbeme por WhatsApp
-            </a>
-        </div>
-    </div>
-</section>
-
 <!-- FOOTER -->
 <footer class="mt-auto py-10 border-t" style="border-color: var(--line);">
     <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-5">
@@ -609,7 +554,7 @@
         <div class="flex items-center gap-7 text-sm" style="color: var(--muted);">
             <a href="#ejemplos" class="hover:text-[var(--ink)]">Ejemplos</a>
             <a href="#servicios" class="hover:text-[var(--ink)]">Servicios</a>
-            <a href="#contacto" class="hover:text-[var(--ink)]">Contacto</a>
+            <a href="#a-medida" class="hover:text-[var(--ink)]">Contacto</a>
         </div>
         <p class="text-xs" style="color: var(--muted);">© <span id="year"></span> Linz · Estudio Web</p>
     </div>
@@ -675,4 +620,71 @@ const translations = {
         p1f1: 'Web de 1 página a medida', p1f2: 'Adaptada a móvil y tablet', p1f3: 'Tus fotos optimizadas',
         p1f4: 'Botón de WhatsApp o teléfono', p1f5: 'Alojamiento incluido',
         p2f1: 'Todo lo del plan Económico', p2f2: 'Varias secciones y galería de fotos',
-        p2f3: 'Google Maps integrado', p2f4: 'SEO básico para que te encue
+        p2f3: 'Google Maps integrado', p2f4: 'SEO básico para que te encuentren', p2f5: 'Cambios pequeños cada mes',
+        p3f1: 'Todo lo del plan Medium', p3f2: 'Identidad visual premium a medida',
+        p3f3: 'Más páginas y secciones', p3f4: 'SEO avanzado + seguimiento', p3f5: 'Cambios prioritarios cada mes',
+        plan_cta: 'Lo quiero · Hablamos',
+        plans_disclaimer: 'Precios orientativos (IVA no incluido). El mantenimiento es mensual y puedes darte de baja cuando quieras.',
+        plan1_label: 'Plan Económico', plan1_sublabel: '150€ · web sencilla, 1 página',
+        plan2_label: 'Plan Medium', plan2_sublabel: '250€ · más secciones y fotos',
+        plan3_label: 'Plan Profesional', plan3_sublabel: '400€ · diseño premium',
+        stat1: 'Proyectos publicados', stat2: 'Diseño a medida', stat3: 'Negocios locales',
+        plans_kicker: 'Planes',
+        plans_h2: 'Precios claros, sin sorpresas',
+        plans_desc: 'Un pago único por tu web y una cuota mensual de mantenimiento. El precio depende de la cantidad de secciones, fotografías e información que necesites.',
+        ex_kicker: 'Ejemplos reales',
+        ex_h3: 'Algunos clientes que han contratado distintos planes',
+        ex_desc: 'Así puedes ver la diferencia entre una web sencilla y una más elaborada. Pincha en cualquiera para verla en vivo.',
+        serv_kicker: 'Servicios',
+        serv_h2: 'Me ocupo de todo, de principio a fin',
+        proc_kicker: 'Proceso',
+        proc_h2: 'Sencillo para ti, en tres pasos',
+        contact_kicker: 'Contacto',
+        contact_h2: '¿Damos vida a la web<br>de tu negocio?',
+        contact_desc: 'Cuéntame qué necesitas y te preparo una propuesta sin compromiso.',
+    },
+    en: {
+        nav_plans: 'Plans', nav_examples: 'Examples', nav_services: 'Services',
+        nav_process: 'Process', nav_contact: 'Contact', nav_cta: "Let's work together",
+        hero_kicker: 'Web design studio · Granada',
+        hero_h1: 'Websites for local businesses that want to grow',
+        hero_desc: 'I design custom websites for clinics, salons, restaurants and shops. Fixed price, no surprises, maintenance included.',
+        hero_cta1: 'See plans & examples', hero_cta2: 'Get a quote',
+        plan1_name: 'Basic', plan2_name: 'Medium', plan3_name: 'Professional',
+        plan2_badge: 'Most popular', plan3_badge: 'To grow',
+        price_suffix: 'the site',
+        plan1_maint: '+ €30/month maintenance',
+        plan2_maint: '+ €40/month maintenance',
+        plan3_maint: '+ €50/month maintenance',
+        plan3_pitch: 'For businesses that want to truly stand out and turn their website into an active lead-generation tool.',
+        p1f1: '1-page custom website', p1f2: 'Mobile & tablet responsive', p1f3: 'Your photos optimised',
+        p1f4: 'WhatsApp or phone button', p1f5: 'Hosting included',
+        p2f1: 'Everything in Basic plan', p2f2: 'Multiple sections & photo gallery',
+        p2f3: 'Google Maps integrated', p2f4: 'Basic SEO to get found online', p2f5: 'Small updates each month',
+        p3f1: 'Everything in Medium plan', p3f2: 'Premium custom visual identity',
+        p3f3: 'More pages & sections', p3f4: 'Advanced SEO + tracking', p3f5: 'Priority changes each month',
+        plan_cta: 'I want it · Let\'s talk',
+        plans_disclaimer: 'Indicative prices (VAT not included). Maintenance is monthly and you can cancel any time.',
+        plan1_label: 'Basic Plan', plan1_sublabel: '€150 · simple, 1-page site',
+        plan2_label: 'Medium Plan', plan2_sublabel: '€250 · more sections & photos',
+        plan3_label: 'Professional Plan', plan3_sublabel: '€400 · premium design',
+        stat1: 'Published projects', stat2: 'Custom design', stat3: 'Local businesses',
+        plans_kicker: 'Plans',
+        plans_h2: 'Clear pricing, no surprises',
+        plans_desc: 'A one-time payment for your website plus a monthly maintenance fee. The price depends on the number of sections, photos and content you need.',
+        ex_kicker: 'Real examples',
+        ex_h3: 'Some clients who chose different plans',
+        ex_desc: 'See the difference between a simple site and a more elaborate one. Click any to view it live.',
+        serv_kicker: 'Services',
+        serv_h2: 'I handle everything, from start to finish',
+        proc_kicker: 'Process',
+        proc_h2: 'Simple for you, in three steps',
+        contact_kicker: 'Contact',
+        contact_h2: 'Ready to bring your<br>business website to life?',
+        contact_desc: "Tell me what you need and I'll put together a no-obligation proposal.",
+    },
+    ar: {
+        nav_plans: 'الباقات', nav_examples: 'أعمالنا', nav_services: 'خدماتنا',
+        nav_process: 'كيف نعمل', nav_contact: 'تواصل معنا', nav_cta: 'ابدأ مشروعك',
+        hero_kicker: 'استوديو تصميم مواقع احترافية · غرناطة',
+        hero_h1: 'موقعك الإل
